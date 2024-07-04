@@ -13,6 +13,7 @@ export const Header = styled.h3`
     @media (min-width: 768px) {
         line-height: 28.6px;
         font-size: 22px;
+        margin-top: 12px;
     }
 `;
 
@@ -23,7 +24,7 @@ export const Role = styled.span`
     font-family: "Poppins", sans-serif;
     color: #7E839A;
     font-size: 13px;
-    margin: 8px auto;
+    margin: 8px auto 0px auto;
     display: block;
     width: auto;
 
@@ -38,5 +39,26 @@ export const Card = styled.div`
     background: #FFFFFF;
     box-shadow: 0px 4px 12px #BAC7D580;
     border-radius: 5px;
-    padding: 16px 16px;
+    padding: 8px;
+
+    @media (min-width: 768px) {
+        padding: 16px 16px;
+    }
+`;
+
+export const Box = styled.div`
+    border-radius: 5px;
+    overflow: hidden;
+    height: 178px;
+    width: 100%;
+
+    @media (min-width: 768px) {
+        height: 231px;
+    }
+`;
+
+export const Image = styled.img`
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
 `;
