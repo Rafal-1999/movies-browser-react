@@ -1,9 +1,14 @@
+import { useSelector } from "react-redux";
+import { selectMovies } from "./moviesSlice";
 import MovieCard from "./common/MovieCard";
 
 function App() {
+    const movies = useSelector(selectMovies);
     return (
         <div className="App">
-            <MovieCard imageURL={"err"} title={"Mulan"} subtitle={"2023"} tags={["asdf", "gfds", "YYYT"]} rating={7.5} voteCount={14}/>
+            {movies.map(movie => (
+                <MovieCard imageURL={movie.imageUrl} title={movie.title} subtitle={movie.subtitle} tags={movie.tags} rating={movie.rating} voteCount={movie.voteCount}/>
+            ))}
         </div>
     );
 }
