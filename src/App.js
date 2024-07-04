@@ -10,7 +10,7 @@ function App() {
     return (
         <div className="App">
             {movies.map(movie => (
-                <MovieCard imageURL={movie.imageUrl} title={movie.title} subtitle={movie.release_date} tags={movie.genre_ids} rating={movie.vote_average} voteCount={movie.vote_count}/>
+                <MovieCard imageURL={"https://image.tmdb.org/t/p/w500" + movie.poster_path} title={movie.title} subtitle={movie.release_date} tags={movie.genre_ids} rating={movie.vote_average} voteCount={movie.vote_count}/>
             ))}
         </div>
     );
