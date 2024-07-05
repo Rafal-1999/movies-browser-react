@@ -1,8 +1,10 @@
 import { StyledIconSpinner, Wrapper } from "./styled";
 
-export const Loading = ({ query }) => (
+const Loading = ({ query }) => (
   <Wrapper>
     Search results for "{ query }"
     <StyledIconSpinner />
   </Wrapper>
 );
+
+export default Loading
