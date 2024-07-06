@@ -1,0 +1,19 @@
+import styled from "styled-components";
+import { ReactComponent as Picture } from "./../../Resources/Picture.svg";
+
+export const Wrapper = styled.article`
+  margin-top: 56px;
+  font-size: 36px;
+  padding-left: 276px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const StyledPicture = styled(Picture)`
+  margin-top: 40px;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  align-self: center;
+`;

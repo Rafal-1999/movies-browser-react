@@ -1,9 +1,9 @@
-import { Loading } from "./features/SearchResultsPage";
+import { NoResults } from "./features/NoResults";
 
 function App() {
   return (
     <div className="App">
-      <Loading />;
+      <NoResults />;
     </div>
   );
 }
