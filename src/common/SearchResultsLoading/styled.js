@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
   margin-top: 56px;
   font-size: 36px;
   padding-left: 276px;
+  color: ${({ theme }) => theme.color.woodsmoke};
   display: flex;
   flex-direction: column;
 `;

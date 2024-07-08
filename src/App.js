@@ -1,11 +1,11 @@
-import { NoResults } from "./features/NoResults";
+import { Router } from "./Routes/router";
 
 function App() {
-  return (
-    <div className="App">
-      <NoResults />;
-    </div>
-  );
+    return (
+        <div className="App">
+            <Router />
+        </div>
+    );
 }
 
 export default App;

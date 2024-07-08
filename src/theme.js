@@ -1,0 +1,18 @@
+export const theme = {
+  color: {
+    white: "#FFFFFF",
+    whisper: "#F5F5FA",
+    mystic: "#E4E6F0",
+    heater: "rgba(186, 199, 213, 0.5)",
+    waterloo: "#7E839A",
+    woodsmoke: "#18181B",
+    black: "#000000",
+    pattensBlue: "#D6E4FF",
+    scienceBlue: "#0044CC",
+    valentino: "#230B34",
+    blueCharcoal: "#010524",
+  },
+  breakpoint: {
+    mobileMax: 767,
+  },
+};
