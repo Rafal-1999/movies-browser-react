@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
-    height: 650px;
     width: 324px;
+    min-height: 650px;
     border-radius: 5px;
     padding: 16px;
     box-sizing: border-box;
     box-shadow: 0px 4px 12px 0px #BAC7D580;
+    display: flex;
+    flex-direction: column;
 `
 
 export const Image = styled.img`
@@ -17,7 +19,7 @@ export const Image = styled.img`
 
 export const Info = styled.div`
     margin-top: 16px;
-    height: 105px;
+    margin-bottom: 8px;
 `
 
 export const Title = styled.p`
@@ -25,20 +27,23 @@ export const Title = styled.p`
     font-weight: 500;
     font-size: 22px;
     margin: 0px;
-    max-height: 58px;
-    overflow: hidden;
+    width: 292px;
+    word-break: break-word;
 `
 
 export const Subtitle = styled.p`
     font-family: Poppins;
     font-weight: 400;
     font-size: 16px;
-    margin: 8px 0px;
+    margin-top: 8px;
+    margin-bottom: 0px;
     color: #7E839A;
 `
 
 export const TagList = styled.div`
     display: flex;
+    flex-wrap: wrap;
+    width: 292px;
 `
 
 export const Tag = styled.div`
@@ -49,13 +54,14 @@ export const Tag = styled.div`
     padding: 8px 16px;
     margin-right: 8px;
     border-radius: 5px;
+    margin-top: 4px;
 `
 
 export const Rating = styled.div`
     display: flex;
     font-family: Poppins;
     gap: 12px;
-    margin-top: 39px;
+    margin-top: auto;
 `
 
 export const StarRating = styled.div`
