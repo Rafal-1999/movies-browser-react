@@ -2,11 +2,14 @@ import styled from "styled-components";
 import { ReactComponent as Picture } from "./../../Resources/Picture.svg";
 
 export const Wrapper = styled.article`
-  margin-top: 56px;
-  font-size: 36px;
-  padding-left: 276px;
   display: flex;
   flex-direction: column;
+`;
+
+export const Headline = styled.h1`
+  padding-left: 276px;
+  margin-top: 56px;
+  font-size: 36px;
 `;
 
 export const StyledPicture = styled(Picture)`

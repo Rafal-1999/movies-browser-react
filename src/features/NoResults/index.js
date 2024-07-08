@@ -1,8 +1,8 @@
-import { StyledPicture, Wrapper } from "./styled";
+import { StyledPicture, Wrapper, Headline } from "./styled";
 
 export const NoResults = ({ query }) => (
   <Wrapper>
-    Sorry, there are no results for "{query}"
+    <Headline>Sorry, there are no results for "{query}"</Headline>
     <StyledPicture />
   </Wrapper>
 );
