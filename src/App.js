@@ -1,11 +1,11 @@
-import { Loading } from "./features/SearchResultsPage";
+import { Router } from "./routes";
 
 function App() {
-  return (
-    <div className="App">
-      <Loading />;
-    </div>
-  );
+    return (
+        <div className="App">
+            <Router />
+        </div>
+    );
 }
 
 export default App;
