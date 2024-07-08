@@ -8,16 +8,20 @@ const rotate = keyframes`
 `;
 
 export const Wrapper = styled.div`
-  align-items: center;
-  flex-direction: column;
-  margin-top: 88px;
-  font-size: 20px;
+  margin-top: 56px;
+  font-size: 36px;
+  padding-left: 276px;
+  color: ${({ theme }) => theme.color.woodsmoke};
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 `;
 
 export const StyledIconSpinner = styled(iconSpinner)`
-  margin-top: 48px;
+  margin-top: 120px;
   animation: ${rotate} 1s linear infinite;
   height: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  align-self: center;
 `;
