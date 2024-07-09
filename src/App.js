@@ -1,4 +1,4 @@
-import { Router } from "./routes";
+import { Router } from "./Routes/router";
 import NavigationBar from "./common/Navigation";
 
 function App() {
