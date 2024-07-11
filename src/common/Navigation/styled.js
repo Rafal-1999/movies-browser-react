@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const NavigationBar = styled.header`
     background: #18181B;
@@ -29,9 +29,10 @@ export const BoxNav = styled.nav`
     flex-wrap: wrap;
 `;
 
-export const LinkNav = styled(Link)`
+export const LinkNavigation = styled(NavLink)`
     color: #FFFFFF;
     padding: 8px 12px;
+    font-size: 15px;
 
     @media (min-width: 768px) {
         padding: 14px 24px;

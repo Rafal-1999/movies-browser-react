@@ -1,12 +1,13 @@
-import { NavigationBar, MainHeader, Box, BoxNav, LinkNav } from "./styled";
+import { NavigationBar, MainHeader, Box, BoxNav, LinkNavigation } from "./styled";
+import { toMovieCard } from "../../Routes/router";
 
 const Navigation = () => (
     <NavigationBar>
         <Box>
             <MainHeader>Movies Browser</MainHeader>
             <BoxNav>
-                <LinkNav to="/movies">MOVIES</LinkNav>
-                <LinkNav to="/people">PEOPLE</LinkNav>
+                <LinkNavigation to={toMovieCard()}>MOVIES</LinkNavigation>
+                <LinkNavigation to="/people">PEOPLE</LinkNavigation>
             </BoxNav>
         </Box>
     </NavigationBar>
