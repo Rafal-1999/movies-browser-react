@@ -1,12 +1,9 @@
-import { useSelector } from "react-redux";
-import { selectMovies } from "./moviesSlice";
-import SearchResults from "./Routes/SearchResults";
+import { Router } from "./Routes/router";
 
 function App() {
-    const movies = useSelector(selectMovies);
     return (
         <div className="App">
-            <SearchResults query={"mulan"}/>
+            <Router />
         </div>
     );
 }
