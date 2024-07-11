@@ -1,11 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
-import { selectMovies, setMovies } from "../../moviesSlice";
+import { useSelector } from "react-redux";
+import { selectMovies } from "../../moviesSlice";
 import MovieCard from "../../common/MovieCard";
 import { useMoviesData } from "../../useMoviesData";
 
 function MoviesList() {
-    const dispatch = useDispatch();
-    dispatch(setMovies(useMoviesData()));
+    useMoviesData();
     const movies = useSelector(selectMovies);
 
     const genreTags = [
