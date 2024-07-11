@@ -1,14 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import MovieCard from "../../common/MovieCard";
-import { selectMovies, setMovies } from "../../moviesSlice";
+import { selectMovies } from "../../moviesSlice";
 import { useSearchData } from "../../useSearchData";
 import { Main, Results } from "./styled"
 
 const SearchResults = ({ query }) => {
-    const dispatch = useDispatch();
-    const data = useSearchData(query);
-    dispatch(setMovies(data))
-
+    useSearchData(query);
     const searchResults = useSelector(selectMovies);
 
     const genreTags = [
