@@ -8,7 +8,6 @@ const rotate = keyframes`
 `;
 
 export const Wrapper = styled.div`
-  color: ${({ theme }) => theme.color.woodsmoke};
   display: flex;
   flex-direction: column;
 `;
@@ -17,8 +16,8 @@ export const Headline = styled.h1`
   font-weight: 600;
   margin-top: 56px;
   font-size: 36px;
-  padding-left: 276px;
-
+  padding-left: 15%;
+  color: ${({ theme }) => theme.color.woodsmoke};
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     margin-top: 24px;
     font-size: 14px;
@@ -35,7 +34,6 @@ export const StyledIconSpinner = styled(iconSpinner)`
   grid-template-columns: 1fr;
   align-items: center;
   align-self: center;
-
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     margin-top: 24px;
     width: 35px;

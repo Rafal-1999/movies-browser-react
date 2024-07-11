@@ -46,7 +46,7 @@ export const Info = styled.h2`
   font-size: 22px;
   color: ${({ theme }) => theme.color.woodsmoke};
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    font-size: 8px;
+    font-size: 10px;
     font-weight: 400;
   }
 `;
@@ -63,8 +63,8 @@ export const Button = styled.button`
   background-color: ${({ theme }) => theme.color.scienceBlue};
   color: ${({ theme }) => theme.color.white};
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    font-size: 5px;
-    width: 60px;
-    height: 14px;
+    font-size: 6px;
+    width: 80px;
+    height: 18px;
   }
 `;
