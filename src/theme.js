@@ -15,4 +15,5 @@ export const theme = {
   breakpoint: {
     mobileMax: 767,
   },
+  boxShadow: "0px 4px 12px 0px rgba(186, 213, 213, 0.5)",
 };
