@@ -11,5 +11,7 @@ html {
 
 body {
   background: ${({ theme }) => theme.color.whisper};
+  font-family: Poppins;
+  margin: 0px;
 }
 `;
