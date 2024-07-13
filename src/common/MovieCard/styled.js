@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ReactComponent as StarIcon } from "./../../Resources/shape-star.svg";
 
 export const CardContainer = styled.div`
   width: 324px;
@@ -8,17 +9,31 @@ export const CardContainer = styled.div`
   box-shadow: ${({ theme }) => theme.boxShadow};
   display: flex;
   flex-direction: column;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    width: 288px;
+    min-height: 201px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+  }
 `;
 
 export const Image = styled.img`
   height: 434px;
   width: 292px;
   border-radius: 5px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    width: 114px;
+    height: 169px;
+  }
 `;
 
 export const Info = styled.div`
   margin-top: 16px;
   margin-bottom: 8px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    margin-top: 0;
+  }
 `;
 
 export const Title = styled.p`
@@ -27,6 +42,10 @@ export const Title = styled.p`
   margin: 0px;
   width: 292px;
   word-break: break-word;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    font-size: 16px;
+    width: 120px;
+  }
 `;
 
 export const Subtitle = styled.p`
@@ -35,12 +54,20 @@ export const Subtitle = styled.p`
   margin-top: 8px;
   margin-bottom: 0px;
   color: ${({ theme }) => theme.color.waterloo};
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    font-size: 13px;
+  }
 `;
 
 export const TagList = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 292px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    width: 107px;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
 `;
 
 export const Tag = styled.div`
@@ -51,20 +78,37 @@ export const Tag = styled.div`
   margin-right: 8px;
   border-radius: 5px;
   margin-top: 4px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
 `;
 
 export const Rating = styled.div`
   display: flex;
   gap: 12px;
   margin-top: auto;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    font-size: 13px;
+  }
 `;
 
 export const StarRating = styled.div`
   font-size: 16px;
   font-weight: 600;
   color: ${({ theme }) => theme.color.woodsmoke};
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    font-size: 13px;
+  }
 `;
 
 export const VoteCount = styled.div`
   color: ${({ theme }) => theme.color.waterloo};
+`;
+
+export const StyledStarIcon = styled(StarIcon)`
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    width: 16px;
+    height: 16px;
+  }
 `;
