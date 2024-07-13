@@ -5,8 +5,7 @@ import { useMoviesData } from "../../useMoviesData";
 import { Headline, MainArticle, StyledSection } from "./styled";
 
 function MoviesList() {
-  const dispatch = useDispatch();
-  dispatch(setMovies(useMoviesData()));
+  useMoviesData();
   const movies = useSelector(selectMovies);
 
   const genreTags = [
