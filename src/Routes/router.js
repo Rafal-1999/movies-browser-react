@@ -1,5 +1,5 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
-import { NavigationBar } from "../common/Navigation/styled";
+import NavigationBar from "../common/Navigation";
 import MoviesList from "./MoviesList";
 
 export const toMovieCard = () => "/movies";
