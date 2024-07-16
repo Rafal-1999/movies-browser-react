@@ -1,9 +1,15 @@
-import { Section, Headline, Info, Button, Wrapper } from "./styled";
-import { ReactComponent as Danger } from "./../../Resources/Danger.svg";
+import {
+  Section,
+  Headline,
+  Info,
+  Button,
+  Wrapper,
+  StyledDanger,
+} from "./styled";
 
 export const Error = () => (
   <Wrapper>
-    <Danger />
+    <StyledDanger />
     <Section>
       <Headline>Ooops! Something went wrong...</Headline>
       <Info>
