@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/static/js/main.b3925cae.js",
+    "static/media/shape-star.svg": "/static/media/shape-star.9d9d3e3b84561a420af5343482f78b29.svg",
+    "index.html": "/index.html",
+    "static/media/Video.svg": "/static/media/Video.01f1d525cb70001ec90cbe8174ce1d23.svg",
+    "main.b3925cae.js.map": "/static/js/main.b3925cae.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.b3925cae.js"
+  ]
+}
