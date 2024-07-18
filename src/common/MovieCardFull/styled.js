@@ -80,4 +80,9 @@ export const OutOf = styled.span`
 export const VoteCount = styled.span`
     font-weight: 400;
     font-size: 14px;
+    margin-left: 12px;
+`
+
+export const Description = styled.div`
+    font-size: 20px;
 `
