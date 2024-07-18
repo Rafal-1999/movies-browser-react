@@ -2,7 +2,7 @@
   "name": "movies-browser-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rafal-1999.github.io/Movies-Browser-React",
+  "homepage": "https://rafal-1999.github.io/movies-browser-react/",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.6",
     "@testing-library/jest-dom": "^5.17.0",
