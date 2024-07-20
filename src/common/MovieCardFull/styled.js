@@ -69,6 +69,7 @@ export const Rating = styled.div`
 
 export const StarRating = styled.span`
     font-size: 22px;
+    height: 22px;
     font-weight: 500;
 `
 
@@ -84,5 +85,6 @@ export const VoteCount = styled.span`
 `
 
 export const Description = styled.div`
+    margin-top: 24px;
     font-size: 20px;
 `

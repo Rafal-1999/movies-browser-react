@@ -1,9 +1,9 @@
 import { Title, Container, Image, Info, Subtitle, DetailBox, Production, Release, Label, TagList, Tag, Rating, StarRating, VoteCount, OutOf, Description } from "./styled";
 
-const MovieCardFull = ({ description, image, title, production, release, tags, rating, voteCount }) => {
+const MovieCardFull = ({ description, imageURL, title, production, release, tags, rating, voteCount }) => {
     return (
         <Container>
-            <Image src={image} />
+            <Image src={imageURL} />
             <Info>
                 <Title>{title}</Title>
                 <Subtitle>2021</Subtitle>

@@ -21,6 +21,7 @@ export const CastHeader = styled.p`
 
 export const CastList = styled.div`
     display: flex;
+    gap: 24px;
 `
 
 export const Crew = styled.div`
@@ -34,4 +35,5 @@ export const CrewHeader = styled.p`
 
 export const CrewList = styled.div`
     display: flex;
+    gap: 24px;
 `
