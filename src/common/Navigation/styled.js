@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { ReactComponent as Video } from "../../Resources/Video.svg";
 
 export const NavigationBar = styled.header`
-    background: #18181B;
+    background: ${({ theme }) => theme.color.woodsmoke};
     min-height: 94px;
     margin-bottom: 24px;
     padding: 24px 16px 16px 16px;
@@ -18,7 +18,7 @@ export const MainHeader = styled.h1`
     font-family: "Poppins";
     font-size: 24px;
     font-weight: 500;
-    color: #FFFFFF;
+    color: ${({ theme }) => theme.color.white};
     line-height: 40px;
     margin: 0;
     display: inline-block;
@@ -94,7 +94,7 @@ export const BoxNav = styled.nav`
 export const Input = styled.input`
     border-radius: 33px;
     height: 44px;
-    background: #FFFFFF;
+    background: ${({ theme }) => theme.color.white};
     border: 1px solid #E4E6F0;
     padding: 14px 14px 13px 40px;
     grid-area: bottom;
@@ -132,7 +132,7 @@ export const Input = styled.input`
 `;
 
 export const LinkNavigation = styled(NavLink)`
-    color: #FFFFFF;
+    color: ${({ theme }) => theme.color.white};
     padding: 8px 12px;
     font-size: 12px;
     font-weight: 600;
@@ -149,6 +149,6 @@ export const LinkNavigation = styled(NavLink)`
     }
 
     &.active {
-        border: 1px solid #FFFFFF;
+        border: 1px solid ${({ theme }) => theme.color.white};
     }
 `;
