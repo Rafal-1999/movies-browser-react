@@ -52,7 +52,7 @@ export const VideoIcon = styled(Video)`
 
 export const Box = styled.div`
     margin: 0 auto;
-    max-width: 1100px;
+    max-width: 1250px;
     width: 100%;
     display: grid;
     grid-template-areas:
