@@ -88,3 +88,8 @@ export const Description = styled.div`
     margin-top: 24px;
     font-size: 20px;
 `
+
+export const Star = styled.svg`
+    align-self: center;
+    margin-right: 8px;
+`

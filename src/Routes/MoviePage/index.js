@@ -9,6 +9,7 @@ import PersonCard from "../../common/PersonCard";
 
 const MoviePage = () => {
     const params = useParams();
+
     useDataById(params.id);
     useMovieCast(params.id);
 
@@ -18,17 +19,15 @@ const MoviePage = () => {
 
     return (
         <>
-            <MovieHeading>
-
-            </MovieHeading>
+            <MovieHeading/>
             <MovieInfo>
-                <MovieCardFull description={movie.overview} imageURL={"https://image.tmdb.org/t/p/w500" + movie.poster_path} title={movie.title} production={"asdf"} release={movie.release_date} tags={["asdf", "asdf", "Asdf"]} rating={movie.vote_average} voteCount={movie.vote_count} />
+                <MovieCardFull description={movie.overview} imageURL={"https://image.tmdb.org/t/p/w500" + movie.poster_path} title={movie.title} production={"asdf"} release={movie.release_date} tags={["Asdf"]} rating={movie.vote_average} voteCount={movie.vote_count} />
             </MovieInfo>
             <Cast>
                 <CastHeader>Cast</CastHeader>
                 <CastList>
                     {cast.map(actor => {
-                        return (<PersonCard image={"https://image.tmdb.org/t/p/w500" + actor.profile_path} title={actor.name} role={actor.role} />)
+                        return (<PersonCard image={"https://image.tmdb.org/t/p/w500" + actor.profile_path} title={actor.name} role={actor.character} />)
                     })}
                 </CastList>
             </Cast>
@@ -36,7 +35,7 @@ const MoviePage = () => {
                 <CrewHeader>Crew</CrewHeader>
                 <CrewList>
                     {crew.map(member => {
-                        return (<PersonCard image={"https://image.tmdb.org/t/p/w500" + member.profile_path} title={member.name} role={member.role} />)
+                        return (<PersonCard image={"https://image.tmdb.org/t/p/w500" + member.profile_path} title={member.name} role={member.known_for_department} />)
                     })}
                 </CrewList>
             </Crew>
