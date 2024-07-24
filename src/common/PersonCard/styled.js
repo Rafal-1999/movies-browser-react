@@ -37,7 +37,7 @@ export const Role = styled.span`
 export const Card = styled.div`
     color: ${({ theme }) => theme.color.woodsmoke};
     background: ${({ theme }) => theme.color.white};
-    box-shadow: 0px 4px 12px ${({ theme }) => theme.color.heater};
+    box-shadow: ${({ theme }) => theme.boxShadow};
     border-radius: 5px;
     padding: 8px;
 
