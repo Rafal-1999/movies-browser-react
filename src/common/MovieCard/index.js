@@ -1,3 +1,4 @@
+import { useAddComma } from "../../useAddComma";
 import {
   CardContainer,
   Image,
@@ -28,7 +29,7 @@ const MovieCard = ({ imageURL, title, subtitle, tags, rating, voteCount }) => {
         </Info>
         <Rating>
           <StyledStarIcon />
-          <StarRating>{rating}</StarRating>
+          <StarRating>{useAddComma(rating)}</StarRating>
           <VoteCount>{voteCount} votes</VoteCount>
         </Rating>
       </div>
