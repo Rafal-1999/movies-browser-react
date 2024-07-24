@@ -60,6 +60,7 @@ export const Subtitle = styled.p`
 `;
 
 export const TagList = styled.div`
+  margin-top: 4px;
   display: flex;
   flex-wrap: wrap;
   width: 292px;
