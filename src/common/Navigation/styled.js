@@ -5,11 +5,11 @@ import { ReactComponent as Video } from "../../Resources/Video.svg";
 export const NavigationBar = styled.header`
     background: ${({ theme }) => theme.color.woodsmoke};
     min-height: 94px;
-    margin-bottom: 24px;
+    margin-bottom: 0px;
     padding: 24px 16px 16px 16px;
 
     @media (min-width: 768px) {
-        margin-bottom: 56px;
+        margin-bottom: 0px;
         padding: 23px 16px;
     }
 `;

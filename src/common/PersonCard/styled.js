@@ -40,6 +40,8 @@ export const Card = styled.div`
     box-shadow: 0px 4px 12px #BAC7D580;
     border-radius: 5px;
     padding: 8px;
+    min-width: 208px;
+    min-height: 339px;
 
     @media (min-width: 768px) {
         padding: 16px 16px;
@@ -61,4 +63,5 @@ export const Image = styled.img`
     height: 100%;
     width: 100%;
     object-fit: cover; 
+    background-color: gray;
 `;
