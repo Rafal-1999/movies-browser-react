@@ -18,6 +18,8 @@ const MoviePage = () => {
     const cast = useSelector(selectCast);
     const crew = useSelector(selectCrew);
 
+    const baseImageURL = "https://image.tmdb.org/t/p/w500";
+
     // these if statements are kinda bad but i didnt know any other way of making operations on selected variables :C
 
     let rating = 0;
@@ -41,15 +43,15 @@ const MoviePage = () => {
 
     return (
         <>
-            <MovieHeading background={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} title={movie.title} rating={rating} voteCount={movie.vote_count}/>
+            <MovieHeading background={baseImageURL + movie.backdrop_path} title={movie.title} rating={rating} voteCount={movie.vote_count}/>
             <MovieInfo>
-                <MovieCardFull description={movie.overview} imageURL={"https://image.tmdb.org/t/p/w500" + movie.poster_path} title={movie.title} production={production} release={movie.release_date} tags={tags} rating={movie.vote_average} voteCount={movie.vote_count} />
+                <MovieCardFull description={movie.overview} imageURL={baseImageURL + movie.poster_path} title={movie.title} production={production} release={movie.release_date} tags={tags} rating={rating} voteCount={movie.vote_count} />
             </MovieInfo>
             <Cast>
                 <CastHeader>Cast</CastHeader>
                 <CastList>
                     {cast.map(actor => {
-                        return (<PersonCard image={"https://image.tmdb.org/t/p/w500" + actor.profile_path} title={actor.name} role={actor.character} />)
+                        return (<PersonCard image={baseImageURL + actor.profile_path} title={actor.name} role={actor.character} />)
                     })}
                 </CastList>
             </Cast>
@@ -57,7 +59,7 @@ const MoviePage = () => {
                 <CrewHeader>Crew</CrewHeader>
                 <CrewList>
                     {crew.map(member => {
-                        return (<PersonCard image={"https://image.tmdb.org/t/p/w500" + member.profile_path} title={member.name} role={member.known_for_department} />)
+                        return (<PersonCard image={baseImageURL + member.profile_path} title={member.name} role={member.known_for_department} />)
                     })}
                 </CrewList>
             </Crew>

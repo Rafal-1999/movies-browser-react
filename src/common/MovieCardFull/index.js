@@ -6,7 +6,7 @@ const MovieCardFull = ({ description, imageURL, title, production, release, tags
             <Image src={imageURL} />
             <Info>
                 <Title>{title}</Title>
-                <Subtitle>2021</Subtitle>
+                <Subtitle>{release}</Subtitle>
                 <DetailBox>
                     <Production><Label>Production: </Label>{production}</Production>
                     <Release><Label>Release Date: </Label>{release}</Release>

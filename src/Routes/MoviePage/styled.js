@@ -37,3 +37,4 @@ export const CrewList = styled.div`
     display: flex;
     gap: 24px;
 `
+

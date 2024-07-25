@@ -29,6 +29,8 @@ function MoviesList() {
         { name: "Western", id: 37 },
     ];
 
+    const baseImageURL = "https://image.tmdb.org/t/p/w500";
+
     return (
         <div className="App">
             {movies.map((movie) => {
@@ -38,7 +40,7 @@ function MoviesList() {
                 });
                 return (
                     <MovieCard
-                        imageURL={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
+                        imageURL={baseImageURL + movie.poster_path}
                         title={movie.title}
                         subtitle={movie.release_date}
                         tags={movieTags}
