@@ -2,8 +2,10 @@ import { useSelector } from "react-redux";
 import { selectMovies } from "../../moviesSlice";
 import MovieCard from "../../common/MovieCard";
 import { useMoviesData } from "../../useMoviesData";
+import { Headline, MainArticle, StyledSection } from "./styled";
 
 function MoviesList() {
+
     useMoviesData();
     const movies = useSelector(selectMovies);
 
@@ -29,27 +31,33 @@ function MoviesList() {
         { name: "Western", id: 37 },
     ];
 
-    const baseImageURL = "https://image.tmdb.org/t/p/w500";
-
     return (
-        <div className="App">
-            {movies.map((movie) => {
-                let movieTags = [];
-                movie.genre_ids.forEach((id) => {
-                    movieTags.push(genreTags.find((tag) => id === tag.id).name);
-                });
-                return (
-                    <MovieCard
-                        imageURL={baseImageURL + movie.poster_path}
-                        title={movie.title}
-                        subtitle={movie.release_date}
-                        tags={movieTags}
-                        rating={movie.vote_average}
-                        voteCount={movie.vote_count}
-                    />
-                );
-            })}
-        </div>
+        <StyledSection>
+            <Headline>Popular movies</Headline>
+            <MainArticle>
+                {movies.map((movie) => {
+                    let movieTags = [];
+                    movie.genre_ids.forEach((id) => {
+                        movieTags.push(genreTags.find((tag) => id === tag.id).name);
+                    });
+
+                    let rating = 0;
+                    if (movie.vote_average) {
+                        rating = movie.vote_average.toFixed(1);
+                    }
+                    return (
+                        <MovieCard
+                            imageURL={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
+                            title={movie.title}
+                            subtitle={movie.release_date}
+                            tags={movieTags}
+                            rating={rating}
+                            voteCount={movie.vote_count}
+                        />
+                    );
+                })}
+            </MainArticle>
+        </StyledSection>
     );
 }
 
