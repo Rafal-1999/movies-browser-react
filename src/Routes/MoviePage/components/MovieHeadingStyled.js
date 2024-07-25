@@ -38,7 +38,7 @@ export const Rating = styled.div`
 
 export const OutOf = styled.span`
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
 `
 
 export const Stats = styled.div`
