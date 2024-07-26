@@ -6,7 +6,7 @@ import {
   Wrapper,
   StyledDanger,
 } from "./styled";
-import { toMovieCard } from "../../Routes/router";
+import { toPopularMovies } from "../../Routes/router";
 
 export const Error = () => (
   <Wrapper>
@@ -16,7 +16,7 @@ export const Error = () => (
       <Info>
         Please check your network connection <br /> and try again
       </Info>
-      <ButtonNavLink to={toMovieCard()}>Back to home page</ButtonNavLink>
+      <ButtonNavLink to={toPopularMovies()}>Back to home page</ButtonNavLink>
     </Section>
   </Wrapper>
 );
