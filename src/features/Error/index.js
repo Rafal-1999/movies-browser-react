@@ -2,10 +2,11 @@ import {
   Section,
   Headline,
   Info,
-  Button,
+  ButtonNavLink,
   Wrapper,
   StyledDanger,
 } from "./styled";
+import { toMovieCard } from "../../Routes/router";
 
 export const Error = () => (
   <Wrapper>
@@ -15,7 +16,7 @@ export const Error = () => (
       <Info>
         Please check your network connection <br /> and try again
       </Info>
-      <Button>Back to home page</Button>
+      <ButtonNavLink to={toMovieCard()}>Back to home page</ButtonNavLink>
     </Section>
   </Wrapper>
 );
