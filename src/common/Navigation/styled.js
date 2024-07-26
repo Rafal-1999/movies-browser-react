@@ -140,6 +140,7 @@ export const LinkNavigation = styled(NavLink)`
     line-height: 18px;
     text-decoration: none;
     border-radius: 29px;
+    transition: all 0.2s linear;
 
     @media (min-width: 768px) {
         padding: 14px 24px;
@@ -150,5 +151,10 @@ export const LinkNavigation = styled(NavLink)`
 
     &.active {
         border: 1px solid ${({ theme }) => theme.color.white};
+    }
+    &:hover,
+    &:focus {
+        color: ${({ theme }) => theme.color.woodsmoke};
+        background: ${({ theme }) => theme.color.white};
     }
 `;
