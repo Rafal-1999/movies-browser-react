@@ -30,7 +30,7 @@ const MovieCard = ({ imageURL, title, subtitle, tags, rating, voteCount }) => {
         </Info>
         <Rating>
           <StyledStarIcon />
-          <StarRating>{useAddComma(rating.toFixed(1))}</StarRating>
+          <StarRating>{useAddComma(rating)}</StarRating>
           <VoteCount>{voteCount} votes</VoteCount>
         </Rating>
       </Data>
