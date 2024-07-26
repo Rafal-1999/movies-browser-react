@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { ReactComponent as StarIcon } from "./../../Resources/shape-star.svg";
 
 export const CardContainer = styled.div`
+  transition: all 0.2s linear;
   width: 324px;
   min-height: 650px;
   border-radius: 5px;
@@ -15,6 +16,11 @@ export const CardContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 16px;
+  }
+
+  &:hover {
+    outline: 1px solid ${({ theme }) => theme.color.woodsmoke};
+    cursor: pointer;
   }
 `;
 
