@@ -66,7 +66,7 @@ export const TagList = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     width: 107px;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
@@ -90,6 +90,7 @@ export const Rating = styled.div`
   margin-top: auto;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 13px;
+    margin-top: 0;
   }
 `;
 
@@ -110,5 +111,16 @@ export const StyledStarIcon = styled(StarIcon)`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     width: 16px;
     height: 16px;
+  }
+`;
+export const Data = styled.div`
+  min-width: 169px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    display: flex;
+    justify-content: start;
   }
 `;

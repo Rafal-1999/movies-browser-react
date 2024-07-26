@@ -10,13 +10,14 @@ import {
   StarRating,
   TagList,
   StyledStarIcon,
+  Data,
 } from "./styled";
 
 const MovieCard = ({ imageURL, title, subtitle, tags, rating, voteCount }) => {
   return (
     <CardContainer>
       <Image src={imageURL} />
-      <div>
+      <Data>
         <Info>
           <Title>{title}</Title>
           <Subtitle>{subtitle}</Subtitle>
@@ -31,7 +32,7 @@ const MovieCard = ({ imageURL, title, subtitle, tags, rating, voteCount }) => {
           <StarRating>{rating}</StarRating>
           <VoteCount>{voteCount} votes</VoteCount>
         </Rating>
-      </div>
+      </Data>
     </CardContainer>
   );
 };
