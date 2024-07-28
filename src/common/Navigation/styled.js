@@ -78,6 +78,7 @@ export const Box = styled.div`
 export const BoxNav = styled.nav`
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-end;
     grid-area: middle;
     gap: 12px;
 
@@ -87,6 +88,7 @@ export const BoxNav = styled.nav`
     }
 
     @media (min-width: 992px) {
+        justify-content: flex-start;
         grid-area: leftMiddle;
     }
 `;
