@@ -24,3 +24,11 @@ export const ButtonLabel = styled.span`
     font-size: 14px;
     margin: 8px;
 `
+
+export const Container = styled.div`
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`

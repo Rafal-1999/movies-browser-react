@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectMovies } from "../../moviesSlice";
+import { selectMaxPages, selectMovies } from "../../moviesSlice";
 import MovieCard from "../../common/MovieCard";
 import { useMoviesData } from "../../useMoviesData";
 import { Headline, MainArticle, StyledSection } from "./styled";
@@ -8,7 +8,7 @@ import PageSelector from "./components/PageSelector/PageSelector";
 
 function MoviesList() {
   const params = useLocation();
-  const page = new URLSearchParams(params.search).get("page");
+  const page = new URLSearchParams(params.search).get("page") || 1;
 
   useMoviesData(page);
   const movies = useSelector(selectMovies);
@@ -60,7 +60,7 @@ function MoviesList() {
           );
         })}
       </MainArticle>
-      <PageSelector page={page} maxPages={100}/>
+      <PageSelector page={page} maxPages={500}/>
     </StyledSection>
   );
 }

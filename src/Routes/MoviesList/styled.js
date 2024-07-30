@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PageSelector from "./components/PageSelector/PageSelector";
 
 export const StyledSection = styled.section`
   margin-top: 56px;
