@@ -1,4 +1,5 @@
 import { useAddComma } from "../../useAddComma";
+import { useYearFromDate } from "../../useYearFromDate";
 import {
   CardContainer,
   Image,
@@ -21,7 +22,7 @@ const MovieCard = ({ imageURL, title, subtitle, tags, rating, voteCount }) => {
       <Data>
         <Info>
           <Title>{title}</Title>
-          <Subtitle>{subtitle}</Subtitle>
+          <Subtitle>{useYearFromDate(subtitle)}</Subtitle>
           <TagList>
             {tags.map((tag) => (
               <Tag>{tag}</Tag>
