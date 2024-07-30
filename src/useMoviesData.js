@@ -19,5 +19,5 @@ export const useMoviesData = (page) => {
       }
     };
     getMoviesData();
-  }, []);
+  }, [page]);
 };

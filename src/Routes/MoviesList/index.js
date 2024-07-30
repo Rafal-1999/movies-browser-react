@@ -60,7 +60,7 @@ function MoviesList() {
           );
         })}
       </MainArticle>
-      <PageSelector/>
+      <PageSelector page={page} maxPages={100}/>
     </StyledSection>
   );
 }
