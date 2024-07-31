@@ -4,6 +4,7 @@ import MoviesList from "./MoviesList";
 import SearchResults from "./SearchResults";
 import MoviePage from "./MoviePage";
 
+export const toPopularPeople = () => "/people";
 export const toMovieCard = () => "/movies";
 export const Router = () => {
     return (
@@ -14,7 +15,7 @@ export const Router = () => {
                 <Route path="/search" element={<SearchResults query="up"/>}/>
                 <Route path="/movies/:id" element={<MoviePage/>} />
                 <Route path="/people/:id" element={"Osoba"} />
-                <Route path="/people" element={"Osoby"} />
+                <Route path={toPopularPeople()} element={"Osoby"} />
                 <Route path="/" element={"Strona główna"} />
             </Routes>
         </HashRouter>
