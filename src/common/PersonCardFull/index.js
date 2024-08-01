@@ -13,7 +13,7 @@ const PersonCardFull = ({
   imageURL,
   title,
   birthDate,
-  BirthPlace,
+  birthPlace,
 }) => {
   return (
     <Container>
@@ -26,7 +26,7 @@ const PersonCardFull = ({
         </Birth>
         <Birth>
           <Label>Place of birth:</Label>
-          {BirthPlace}
+          {birthPlace}
         </Birth>
         <Description>{description}</Description>
       </Info>
