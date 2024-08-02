@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   box-shadow: ${({ theme }) => theme.boxShadow};
+  background-color: ${({ theme }) => theme.color.white};
   display: flex;
 `;
 
@@ -24,7 +25,7 @@ export const Birth = styled.p`
   font-weight: 400;
   font-size: 18px;
 `;
-export const label = styled.span`
+export const Label = styled.span`
   color: ${({ theme }) => theme.color.stormGray};
 `;
 
