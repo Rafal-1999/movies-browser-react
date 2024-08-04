@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const peopleSlice = createSlice({
   name: "people",
   initialState: {
-    movies: [],
+    people: [],
     cast: [],
     crew: [],
     state: "init",
@@ -27,7 +27,7 @@ const peopleSlice = createSlice({
 });
 
 export const { setPeople } = peopleSlice.actions;
-export const selectPeople = (state) => state.people.movies;
+export const selectPeople = (state) => state.people.people;
 export const selectCast = (state) => state.people.cast;
 export const selectCrew = (state) => state.people.crew;
 
