@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as Danger } from "./../../Resources/Danger.svg";
+import { NavLink } from "react-router-dom";
 
 export const StyledDanger = styled(Danger)`
   height: auto;
@@ -51,7 +52,7 @@ export const Info = styled.h2`
   }
 `;
 
-export const Button = styled.button`
+export const ButtonNavLink = styled(NavLink)`
   width: 181px;
   height: 51px;
   font-weight: 700;
@@ -60,6 +61,7 @@ export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
   background-color: ${({ theme }) => theme.color.scienceBlue};
   color: ${({ theme }) => theme.color.white};
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {

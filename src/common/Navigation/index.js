@@ -1,6 +1,14 @@
 import { useLocation } from "react-router-dom";
-import { VideoIcon, NavigationBar, MainHeader, Box, BoxNav, LinkNavigation, Input } from "./styled";
-import { toMovieCard, toPopularPeople } from "../../Routes/router";
+import {
+  VideoIcon,
+  NavigationBar,
+  MainHeader,
+  Box,
+  BoxNav,
+  LinkNavigation,
+  Input
+} from "./styled";
+import { toPopularMovies, toPopularPeople } from "../../Routes/router";
 
 const Navigation = ({ query }) => {
     const path = useLocation();
@@ -18,7 +26,7 @@ const Navigation = ({ query }) => {
             <Box>
                 <MainHeader><VideoIcon />Movies Browser</MainHeader>
                 <BoxNav>
-                    <LinkNavigation to={toMovieCard()}>MOVIES</LinkNavigation>
+                    <LinkNavigation to={toPopularMovies()}>MOVIES</LinkNavigation>
                     <LinkNavigation to={toPopularPeople()}>PEOPLE</LinkNavigation>
                 </BoxNav>
                 <Input placeholder={`Search for ${content}...`} type="text" value={query} onChange={""} />
