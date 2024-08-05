@@ -12,7 +12,6 @@ import { toPopularMovies, toPopularPeople } from "../../Routes/router";
 
 const Navigation = ({ query }) => {
     const path = useLocation();
-    console.log(path);
 
     let content = "movies";
     if (path.pathname.includes("movies")) {
@@ -29,7 +28,7 @@ const Navigation = ({ query }) => {
                     <LinkNavigation to={toPopularMovies()}>MOVIES</LinkNavigation>
                     <LinkNavigation to={toPopularPeople()}>PEOPLE</LinkNavigation>
                 </BoxNav>
-                <Input placeholder={`Search for ${content}...`} type="text" value={query} onChange={""} />
+                <Input placeholder={`Search for ${content}...`} type="text" value={query} onChange={() => <></>} />
             </Box>
         </NavigationBar>
     )

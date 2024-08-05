@@ -50,12 +50,13 @@ function MoviesList() {
 
           return (
             <MovieCard
-              imageURL={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
-              title={movie.title}
-              subtitle={movie.release_date}
-              tags={movieTags}
-              rating={rating}
-              voteCount={movie.vote_count}
+                imageURL={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
+                title={movie.title}
+                subtitle={movie.release_date}
+                tags={movieTags}
+                rating={rating}
+                voteCount={movie.vote_count}
+                key={movie.title}
             />
           );
         })}
