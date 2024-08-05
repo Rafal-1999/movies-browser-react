@@ -1,17 +1,38 @@
-import { VideoIcon, NavigationBar, MainHeader, Box, BoxNav, LinkNavigation, Input } from "./styled";
-import { toMovieCard } from "../../Routes/router";
+import { useLocation } from "react-router-dom";
+import {
+  VideoIcon,
+  NavigationBar,
+  MainHeader,
+  Box,
+  BoxNav,
+  LinkNavigation,
+  Input
+} from "./styled";
+import { toPopularMovies, toPopularPeople } from "../../Routes/router";
 
-const Navigation = ({query}) => (
-    <NavigationBar>
-        <Box>
-            <MainHeader><VideoIcon />Movies Browser</MainHeader>
-            <BoxNav>
-                <LinkNavigation to={toMovieCard()}>MOVIES</LinkNavigation>
-                <LinkNavigation to="/people">PEOPLE</LinkNavigation>
-            </BoxNav>
-            <Input placeholder={"Search for movies..."} type="text" value={query} onChange={""} />
-        </Box>
-    </NavigationBar>
-);
+const Navigation = ({ query }) => {
+    const path = useLocation();
+    console.log(path);
+
+    let content = "movies";
+    if (path.pathname.includes("movies")) {
+        content = "movies";
+    } else {
+        content = "people";
+    }
+
+    return (
+        <NavigationBar>
+            <Box>
+                <MainHeader><VideoIcon />Movies Browser</MainHeader>
+                <BoxNav>
+                    <LinkNavigation to={toPopularMovies()}>MOVIES</LinkNavigation>
+                    <LinkNavigation to={toPopularPeople()}>PEOPLE</LinkNavigation>
+                </BoxNav>
+                <Input placeholder={`Search for ${content}...`} type="text" value={query} onChange={""} />
+            </Box>
+        </NavigationBar>
+    )
+};
 
 export default Navigation;

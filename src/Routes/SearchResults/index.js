@@ -30,6 +30,8 @@ const SearchResults = ({ query }) => {
         { name: "Western", id: 37 },
     ];
 
+    const baseImageURL = "https://image.tmdb.org/t/p/w500";
+
     return (
         <Main>
             <p>Search results for "{query}"</p>
@@ -45,7 +47,7 @@ const SearchResults = ({ query }) => {
 
                     return (
                         <MovieCard
-                            imageURL={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
+                            imageURL={baseImageURL + movie.poster_path}
                             title={movie.title}
                             subtitle={movie.release_date}
                             tags={movieTags}

@@ -5,6 +5,7 @@ export const theme = {
     mystic: "#E4E6F0",
     heater: "rgba(186, 199, 213, 0.5)",
     waterloo: "#7E839A",
+    stormGray: "#74788B",
     woodsmoke: "#18181B",
     black: "#000000",
     pattensBlue: "#D6E4FF",

@@ -1,13 +1,18 @@
 import { Image, Box, Card, Header, Role } from "./styled";
 
-const PersonCard = ({ image, title, role }) => (
-    <Card>
-        <Box>
-            <Image src={image} />
-        </Box>
-        <Header>{title}</Header>
-        <Role>{role}</Role>
-    </Card>
-);
+const PersonCard = ({ image, title, role }) => {
+    if (image === "https://image.tmdb.org/t/p/w500null") {
+        image = require("../../Resources/poster.png");
+    }
+    return (
+        <Card>
+            <Box>
+                <Image src={image} />
+            </Box>
+            <Header>{title}</Header>
+            <Role>{role}</Role>
+        </Card>
+    );
+};
 
 export default PersonCard;

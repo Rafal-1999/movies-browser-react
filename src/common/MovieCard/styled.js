@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { ReactComponent as StarIcon } from "./../../Resources/shape-star.svg";
 
 export const CardContainer = styled.div`
+  transition: all 0.2s linear;
   width: 324px;
   min-height: 650px;
   border-radius: 5px;
@@ -15,6 +16,11 @@ export const CardContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 16px;
+  }
+
+  &:hover {
+    outline: 1px solid ${({ theme }) => theme.color.woodsmoke};
+    cursor: pointer;
   }
 `;
 
@@ -60,13 +66,14 @@ export const Subtitle = styled.p`
 `;
 
 export const TagList = styled.div`
+  margin-top: 4px;
   display: flex;
   flex-wrap: wrap;
   width: 292px;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     width: 107px;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
@@ -90,6 +97,7 @@ export const Rating = styled.div`
   margin-top: auto;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 13px;
+    margin-top: 0;
   }
 `;
 
@@ -110,5 +118,16 @@ export const StyledStarIcon = styled(StarIcon)`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     width: 16px;
     height: 16px;
+  }
+`;
+export const Data = styled.div`
+  min-width: 169px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    display: flex;
+    justify-content: start;
   }
 `;

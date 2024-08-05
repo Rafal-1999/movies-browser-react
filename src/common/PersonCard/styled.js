@@ -8,7 +8,7 @@ export const Header = styled.h3`
     line-height: 18.2px;
     font-family: "Poppins", sans-serif;
     margin: 8px 0px;
-    color: #18181B;
+    color: ${({ theme }) => theme.color.woodsmoke};
 
     @media (min-width: 768px) {
         line-height: 28.6px;
@@ -22,7 +22,7 @@ export const Role = styled.span`
     text-align: center;
     font-weight: 400;
     font-family: "Poppins", sans-serif;
-    color: #7E839A;
+    color: ${({ theme }) => theme.color.waterloo};
     font-size: 13px;
     margin: 8px auto 0px auto;
     display: block;
@@ -35,14 +35,22 @@ export const Role = styled.span`
 `;
 
 export const Card = styled.div`
-    color: #18181B;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 12px #BAC7D580;
+    color: ${({ theme }) => theme.color.woodsmoke};
+    background: ${({ theme }) => theme.color.white};
+    box-shadow: ${({ theme }) => theme.boxShadow};
     border-radius: 5px;
     padding: 8px;
+    min-width: 208px;
+    min-height: 339px;
+    transition: all 0.2s linear;
 
     @media (min-width: 768px) {
         padding: 16px 16px;
+    }
+
+    &:hover {
+        outline: 1px solid ${({ theme }) => theme.color.woodsmoke};
+        cursor: pointer;
     }
 `;
 
@@ -61,4 +69,5 @@ export const Image = styled.img`
     height: 100%;
     width: 100%;
     object-fit: cover; 
+    background-color: gray;
 `;
