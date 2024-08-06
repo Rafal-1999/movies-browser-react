@@ -14,7 +14,7 @@ export const usePeopleDataById = (id) => {
           `https://api.themoviedb.org/3/person/${id}?api_key=${apiKey}`
         );
         const data = res.data;
-        dispatch(setPeople({ results: data }));
+        dispatch(setPeople({ results: res.data }));
       } catch {
         dispatch(setPeople({ state: "error" }));
       }

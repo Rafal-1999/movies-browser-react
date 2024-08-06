@@ -22,11 +22,11 @@ const PeoplePage = () => {
   return (
     <Container>
       <PersonCardFull
-        description={person.overview}
-        imageURL={baseImageURL + person.poster_path}
-        title={person.title}
-        birthDate={person.birthDate}
-        birthPlace={person.birthPlace}
+        description={person.biography}
+        imageURL={baseImageURL + person.profile_path}
+        title={person.name}
+        birthDate={person.birthday}
+        birthPlace={person.place_of_birth}
       />
       <>
         <ListHeadline>Movies - Cast</ListHeadline>
