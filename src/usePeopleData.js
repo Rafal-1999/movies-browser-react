@@ -5,15 +5,15 @@ import { setPeople } from "./peopleSlice";
 
 const apiKey = "4b61c5d2cbb79009328876101afea488";
 
-export const usePeopleData = () => {
+export const usePeopleData = (id) => {
   const dispatch = useDispatch();
   useEffect(() => {
     const getPeopleData = async () => {
       try {
         const res = await axios.get(
-          `https://api.themoviedb.org/3/person?api_key=${apiKey}`
+          ` https://api.themoviedb.org/3/person/${id}?api_key=${apiKey}`
         );
-        dispatch(setPeople(res.data));
+        dispatch(setPeople({results: res.data}));
       } catch {
         dispatch(setPeople({ state: "error" }));
       }
