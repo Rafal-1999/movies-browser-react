@@ -11,7 +11,7 @@ export const usePeopleData = () => {
     const getPeopleData = async () => {
       try {
         const res = await axios.get(
-          `https://api.themoviedb.org/3/person?api_key=${apiKey}`
+          `https://api.themoviedb.org/3/person/popular?api_key=${apiKey}`
         );
         dispatch(setPeople(res.data));
       } catch {

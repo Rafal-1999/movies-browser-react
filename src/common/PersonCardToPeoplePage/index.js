@@ -1,6 +1,6 @@
-import { Image, Box, Card, Header, Role } from "./styled";
+import { Image, Box, Card, Header } from "./styled";
 
-const PersonCard = ({ image, title, role }) => {
+const PersonCard = ({ image, title }) => {
   if (image === "https://image.tmdb.org/t/p/w500null") {
     image = require("../../Resources/poster.png");
   }

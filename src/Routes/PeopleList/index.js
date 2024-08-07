@@ -15,8 +15,8 @@ function PeopleList() {
         {people.map((person) => {
           return (
             <PersonCardToPeoplePage
-              imageURL={"https://image.tmdb.org/t/p/w500" + person.poster_path}
-              title={person.title}
+              image={"https://image.tmdb.org/t/p/h632" + person.profile_path}
+              title={person.name}
             />
           );
         })}

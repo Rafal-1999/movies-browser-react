@@ -17,7 +17,8 @@ const PeoplePage = () => {
   const cast = useSelector(selectCast);
   const crew = useSelector(selectCrew);
 
-  const baseImageURL = "https://image.tmdb.org/t/p/w500";
+  const baseImageURL = "https://image.tmdb.org/t/p/h632";
+  const baseImageURLmovie = "https://image.tmdb.org/t/p/w500";
 
   return (
     <Container>
@@ -34,7 +35,7 @@ const PeoplePage = () => {
           {cast.map((movie) => {
             return (
               <MovieCard
-                image={baseImageURL + movie.poster_path}
+                imageURL={baseImageURLmovie + movie.poster_path}
                 title={movie.title}
                 subtitle={movie.release_date}
                 tags={movie.genre_ids}
@@ -50,7 +51,7 @@ const PeoplePage = () => {
             {crew.map((movie) => {
               return (
                 <MovieCard
-                  image={baseImageURL + movie.poster_path}
+                  imageURL={baseImageURLmovie + movie.poster_path}
                   title={movie.title}
                   subtitle={movie.release_date}
                   tags={movie.genre_ids}

@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
 `;
 
-export const Image = styled.image`
+export const Image = styled.img`
   height: 564px;
   width: 399px;
   margin: 40px;
