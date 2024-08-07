@@ -21,7 +21,7 @@ export const Router = () => {
                 <Route path="/people/:id" element={"Osoba"} />
                 <Route path={toPopularPeople()} element={"Osoby"} />
                 <Route path="/" element={"Strona główna"} />
-                <Route path="/error" element={<Error />} />
+                <Route path="*" element={<Error />} />
                 <Route path="/noResults" element={<NoResults />} />
             </Routes>
         </HashRouter>
