@@ -13,6 +13,14 @@ import { useSearchParams, useNavigate } from "react-router-dom";
 import { useRef } from "react";
 
 const Navigation = () => {
+    const path = useLocation();
+  
+    let content = "movies";
+    if (path.pathname.includes("movies")) {
+        content = "movies";
+    } else {
+        content = "people";
+    }
 
     const [params, setParams] = useSearchParams();
     const searchRef = useRef();
@@ -29,23 +37,21 @@ const Navigation = () => {
 
     return (
         <NavigationBar>
-        <Box>
-          <MainHeader>
-            <VideoIcon />
-            Movies Browser
-          </MainHeader>
-          <BoxNav>
-            <LinkNavigation to={toPopularMovies()}>MOVIES</LinkNavigation>
-            <LinkNavigation to="/people">PEOPLE</LinkNavigation>
-          </BoxNav>
-          <Input
-            placeholder={"Search for movies..."}
-            type="text"
-            ref={searchRef}
-            onChange={() => {searchbarHandler()}}
-          />
-        </Box>
-      </NavigationBar>
+            <Box>
+                <MainHeader><VideoIcon />Movies Browser</MainHeader>
+                <BoxNav>
+                    <LinkNavigation to={toPopularMovies()}>MOVIES</LinkNavigation>
+                    <LinkNavigation to={toPopularPeople()}>PEOPLE</LinkNavigation>
+                </BoxNav>
+                <Input 
+                    placeholder={`Search for ${content}...`}
+                    type="text"
+                    value={query}
+                    ref={searchRef}
+                    onChange={() => {searchbarHandler()}}
+                />
+            </Box>
+        </NavigationBar>     
     )
 };
 
