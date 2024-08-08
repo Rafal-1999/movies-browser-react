@@ -66,8 +66,6 @@ function MoviesList() {
       </StyledSection>
     );
   }
-
-
 }
 
 export default MoviesList;

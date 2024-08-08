@@ -27,7 +27,7 @@ const MovieCard = ({ imageURL, title, subtitle, tags, rating, voteCount, id }) =
           <Subtitle>{useYearFromDate(subtitle)}</Subtitle>
           <TagList>
             {tags.map((tag) => (
-              <Tag>{tag}</Tag>
+                <Tag key={tag}>{tag}</Tag>
             ))}
           </TagList>
         </Info>
