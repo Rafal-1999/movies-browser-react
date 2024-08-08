@@ -6,11 +6,14 @@ import MoviePage from "./MoviePage";
 import { Error } from "../features/Error";
 import { NoResults } from "../features/NoResults";
 import MovieCardFull from "../common/MovieCardFull";
+import PeoplePage from "./PeoplePage";
+import PeopleList from "./PeopleList";
 
 export const toPopularPeople = () => "/people";
 export const toPopularMovies = () => "/movies";
 export const toSearchMovies = () => "/search";
 export const Router = () => {
+
     return (
         <HashRouter>
             <NavigationBar />
@@ -19,8 +22,8 @@ export const Router = () => {
                 <Route path={toSearchMovies()} element={<SearchResults />} />
                 <Route path="/moviecardfull" element={<MovieCardFull />} />
                 <Route path="/movies/:id" element={<MoviePage/>} />
-                <Route path="/people/:id" element={"Osoba"} />
-                <Route path={toPopularPeople()} element={"Osoby"} />
+                <Route path="/people/:id" element={<PeoplePage />} />
+                <Route path={toPopularPeople()} element={<PeopleList />} />
                 <Route path="/" element={"Strona główna"} />
                 <Route path="*" element={<Error />} />
                 <Route path="/noResults" element={<NoResults />} />

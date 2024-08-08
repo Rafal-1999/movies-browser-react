@@ -18,6 +18,9 @@ import {
 
 const MovieCard = ({ imageURL, title, subtitle, tags, rating, voteCount, id }) => {
   const navigate = useNavigate();
+  if (imageURL === "https://image.tmdb.org/t/p/w500null") {
+    imageURL = require("../../Resources/noposter.png");
+  }
   return (
     <CardContainer onClick={() => {navigate(`/movies/${id}`)}}>
       <Image src={imageURL} />
