@@ -3,8 +3,13 @@ import MovieCard from "../../common/MovieCard";
 import { selectMovies } from "../../moviesSlice";
 import { useSearchData } from "../../useSearchData";
 import { Main, Results } from "./styled"
+import { useLocation } from "react-router-dom";
 
-const SearchResults = ({ query }) => {
+const SearchResults = () => {
+
+    const params = useLocation();
+    const query = new URLSearchParams(params.search).get("query");
+    
     useSearchData(query);
     const searchResults = useSelector(selectMovies);
 
