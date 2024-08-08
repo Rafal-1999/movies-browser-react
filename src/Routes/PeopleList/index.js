@@ -8,20 +8,22 @@ function PeopleList() {
   usePeopleData();
   const people = useSelector(selectPeople);
 
-  return (
-    <StyledSection>
-      <Headline> Popular people </Headline>
-      <MainArticle>
-        {people.map((person) => {
-          return (
-            <PersonCardToPeoplePage
-              image={"https://image.tmdb.org/t/p/h632" + person.profile_path}
-              title={person.name}
-            />
-          );
-        })}
-      </MainArticle>
-    </StyledSection>
-  );
+  if (Array.isArray(people)) {
+    return (
+      <StyledSection>
+        <Headline> Popular people </Headline>
+        <MainArticle>
+          {people.map((person) => {
+            return (
+              <PersonCardToPeoplePage
+                image={"https://image.tmdb.org/t/p/h632" + person.profile_path}
+                title={person.name}
+              />
+            );
+          })}
+        </MainArticle>
+      </StyledSection>
+    );
+  }
 }
 export default PeopleList;
