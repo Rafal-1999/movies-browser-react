@@ -105,15 +105,11 @@ export const Input = styled.input`
     font-weight: 400;
     font-family: "Poppins";
     position: relative;
+    background-image: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7.84394" cy="7.84442" r="5.99237" stroke="%23627489" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.0117 12.3234L14.3611 14.6667" stroke="%23627489" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-position: left 16px center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
 
-    &::before {
-        content: url('data:image/svg+xml,<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.7659 1.52802C5.21587 1.52802 1.52734 5.21654 1.52734 9.76657C1.52734 14.3166 5.21587 18.0051 9.7659 18.0051C14.3159 18.0051 18.0045 14.3166 18.0045 9.76657C18.0045 5.21654 14.3159 1.52802 9.7659 1.52802ZM0.0273438 9.76657C0.0273438 4.38812 4.38744 0.0280151 9.7659 0.0280151C15.1444 0.0280151 19.5045 4.38812 19.5045 9.76657C19.5045 12.3045 18.5337 14.6156 16.9432 16.349L20.0713 19.469C20.3646 19.7615 20.3652 20.2363 20.0727 20.5296C19.7802 20.8229 19.3053 20.8235 19.012 20.531L15.8467 17.3739C14.1803 18.7076 12.0662 19.5051 9.7659 19.5051C4.38744 19.5051 0.0273438 15.145 0.0273438 9.76657Z" fill="%23627489"/></svg>');
-        position: absolute;
-        top: 15.85px;
-        left: 17.85px;
-        width: 21px;
-        height: 21px;
-    }
 
     @media (min-width: 576px) {
         height: 48px;
@@ -121,11 +117,8 @@ export const Input = styled.input`
         font-size: 16px;
         padding: 12px 12px 12px 64px;
         grid-area: center;
-
-        &::before {
-            top: 14.78px;
-            left: 26.78px;
-        }
+        background-position: left 24px center;
+        background-size: 24px 24px;
     }
 
     @media (min-width: 992px) {

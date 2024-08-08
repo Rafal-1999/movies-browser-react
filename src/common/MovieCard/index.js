@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useAddComma } from "../../useAddComma";
 import { useYearFromDate } from "../../useYearFromDate";
 import {
@@ -15,12 +16,13 @@ import {
   Data,
 } from "./styled";
 
-const MovieCard = ({ imageURL, title, subtitle, tags, rating, voteCount }) => {
+const MovieCard = ({ imageURL, title, subtitle, tags, rating, voteCount, id }) => {
+  const navigate = useNavigate();
   if (imageURL === "https://image.tmdb.org/t/p/w500null") {
     imageURL = require("../../Resources/noposter.png");
   }
   return (
-    <CardContainer>
+    <CardContainer onClick={() => {navigate(`/movies/${id}`)}}>
       <Image src={imageURL} />
       <Data>
         <Info>
@@ -28,7 +30,7 @@ const MovieCard = ({ imageURL, title, subtitle, tags, rating, voteCount }) => {
           <Subtitle>{useYearFromDate(subtitle)}</Subtitle>
           <TagList>
             {tags.map((tag) => (
-              <Tag key={tag}>{tag}</Tag>
+                <Tag key={tag}>{tag}</Tag>
             ))}
           </TagList>
         </Info>

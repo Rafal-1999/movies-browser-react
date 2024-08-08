@@ -3,8 +3,13 @@ import MovieCard from "../../common/MovieCard";
 import { selectMovies } from "../../moviesSlice";
 import { useSearchData } from "../../useSearchData";
 import { Main, Results } from "./styled"
+import { useLocation } from "react-router-dom";
 
-const SearchResults = ({ query }) => {
+const SearchResults = () => {
+
+    const params = useLocation();
+    const query = new URLSearchParams(params.search).get("query");
+    
     useSearchData(query);
     const searchResults = useSelector(selectMovies);
 
@@ -41,14 +46,19 @@ const SearchResults = ({ query }) => {
                     movie.genre_ids.forEach((id) => {
                         movieTags.push(genreTags.find((tag) => id === tag.id).name);
                     });
+
+                    let rating = 0;
+                    rating = movie.vote_average.toFixed(1);
+
                     return (
                         <MovieCard
                             imageURL={baseImageURL + movie.poster_path}
                             title={movie.title}
                             subtitle={movie.release_date}
                             tags={movieTags}
-                            rating={movie.vote_average}
+                            rating={rating}
                             voteCount={movie.vote_count}
+                            id={movie.id}
                         />
                     );
                 })}

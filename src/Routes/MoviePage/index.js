@@ -37,7 +37,7 @@ const MoviePage = () => {
     let production = "";
     if (movie.production_companies) {
         movie.production_companies.forEach(company => {
-            production += company.name;
+            production += ` ${company.name}`;
         })
     }
 
