@@ -42,9 +42,15 @@ export const Card = styled.div`
     padding: 8px;
     min-width: 208px;
     min-height: 339px;
+    transition: all 0.2s linear;
 
     @media (min-width: 768px) {
         padding: 16px 16px;
+    }
+
+    &:hover {
+        outline: 1px solid ${({ theme }) => theme.color.woodsmoke};
+        cursor: pointer;
     }
 `;
 

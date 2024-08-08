@@ -7,6 +7,7 @@ import { Error } from "../features/Error";
 import { NoResults } from "../features/NoResults";
 import MovieCardFull from "../common/MovieCardFull";
 
+export const toPopularPeople = () => "/people";
 export const toPopularMovies = () => "/movies";
 export const toSearchMovies = () => "/search";
 export const Router = () => {

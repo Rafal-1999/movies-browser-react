@@ -78,6 +78,7 @@ export const Box = styled.div`
 export const BoxNav = styled.nav`
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-end;
     grid-area: middle;
     gap: 12px;
 
@@ -87,6 +88,7 @@ export const BoxNav = styled.nav`
     }
 
     @media (min-width: 992px) {
+        justify-content: flex-start;
         grid-area: leftMiddle;
     }
 `;
@@ -140,6 +142,7 @@ export const LinkNavigation = styled(NavLink)`
     line-height: 18px;
     text-decoration: none;
     border-radius: 29px;
+    transition: all 0.2s linear;
 
     @media (min-width: 768px) {
         padding: 14px 24px;
@@ -150,5 +153,10 @@ export const LinkNavigation = styled(NavLink)`
 
     &.active {
         border: 1px solid ${({ theme }) => theme.color.white};
+    }
+    &:hover,
+    &:focus {
+        color: ${({ theme }) => theme.color.woodsmoke};
+        background: ${({ theme }) => theme.color.white};
     }
 `;

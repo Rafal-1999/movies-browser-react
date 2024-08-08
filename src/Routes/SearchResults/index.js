@@ -46,13 +46,17 @@ const SearchResults = () => {
                     movie.genre_ids.forEach((id) => {
                         movieTags.push(genreTags.find((tag) => id === tag.id).name);
                     });
+
+                    let rating = 0;
+                    rating = movie.vote_average.toFixed(1);
+
                     return (
                         <MovieCard
                             imageURL={baseImageURL + movie.poster_path}
                             title={movie.title}
                             subtitle={movie.release_date}
                             tags={movieTags}
-                            rating={movie.vote_average}
+                            rating={rating}
                             voteCount={movie.vote_count}
                         />
                     );

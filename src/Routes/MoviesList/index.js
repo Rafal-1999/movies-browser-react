@@ -1,13 +1,17 @@
 import { useSelector } from "react-redux";
-import { selectMovies } from "../../moviesSlice";
+import { selectMaxPages, selectMovies } from "../../moviesSlice";
 import MovieCard from "../../common/MovieCard";
 import { useMoviesData } from "../../useMoviesData";
 import { Headline, MainArticle, StyledSection } from "./styled";
+import { useLocation } from "react-router-dom";
+import PageSelector from "./components/PageSelector/PageSelector";
 
 function MoviesList() {
-
-    useMoviesData();
-    const movies = useSelector(selectMovies);
+  const params = useLocation();
+  const page = new URLSearchParams(params.search).get("page") || 1;
+  
+  useMoviesData(page);
+  const movies = useSelector(selectMovies);
 
     const genreTags = [
         { name: "Action", id: 28 },
@@ -30,35 +34,35 @@ function MoviesList() {
         { name: "War", id: 10752 },
         { name: "Western", id: 37 },
     ];
+  
+  return (
+    <StyledSection>
+      <Headline>Popular movies</Headline>
+      <MainArticle>
+        {movies.map((movie) => {
+          let movieTags = [];
+          movie.genre_ids.forEach((id) => {
+            movieTags.push(genreTags.find((tag) => id === tag.id).name);
+          });
 
-    return (
-        <StyledSection>
-            <Headline>Popular movies</Headline>
-            <MainArticle>
-                {movies.map((movie) => {
-                    let movieTags = [];
-                    movie.genre_ids.forEach((id) => {
-                        movieTags.push(genreTags.find((tag) => id === tag.id).name);
-                    });
+          let rating = 0;
+          rating = movie.vote_average.toFixed(1);
 
-                    let rating = 0;
-                    if (movie.vote_average) {
-                        rating = movie.vote_average.toFixed(1);
-                    }
-                    return (
-                        <MovieCard
-                            imageURL={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
-                            title={movie.title}
-                            subtitle={movie.release_date}
-                            tags={movieTags}
-                            rating={rating}
-                            voteCount={movie.vote_count}
-                        />
-                    );
-                })}
-            </MainArticle>
-        </StyledSection>
-    );
+          return (
+            <MovieCard
+              imageURL={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
+              title={movie.title}
+              subtitle={movie.release_date}
+              tags={movieTags}
+              rating={rating}
+              voteCount={movie.vote_count}
+            />
+          );
+        })}
+      </MainArticle>
+      <PageSelector page={page} maxPages={500}/>
+    </StyledSection>
+  );
 }
 
 export default MoviesList;

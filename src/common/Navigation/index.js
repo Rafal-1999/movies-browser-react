@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import {
   VideoIcon,
   NavigationBar,
@@ -5,7 +6,7 @@ import {
   Box,
   BoxNav,
   LinkNavigation,
-  Input,
+  Input
 } from "./styled";
 import { toPopularMovies } from "../../Routes/router";
 import { useSearchParams, useNavigate } from "react-router-dom";
