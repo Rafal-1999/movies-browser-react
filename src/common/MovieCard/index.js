@@ -16,6 +16,9 @@ import {
 } from "./styled";
 
 const MovieCard = ({ imageURL, title, subtitle, tags, rating, voteCount }) => {
+  if (imageURL === "https://image.tmdb.org/t/p/w500null") {
+    imageURL = require("../../Resources/noposter.png");
+  }
   return (
     <CardContainer>
       <Image src={imageURL} />
@@ -25,7 +28,7 @@ const MovieCard = ({ imageURL, title, subtitle, tags, rating, voteCount }) => {
           <Subtitle>{useYearFromDate(subtitle)}</Subtitle>
           <TagList>
             {tags.map((tag) => (
-              <Tag>{tag}</Tag>
+              <Tag key={tag}>{tag}</Tag>
             ))}
           </TagList>
         </Info>
