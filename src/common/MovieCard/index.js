@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useAddComma } from "../../useAddComma";
 import { useYearFromDate } from "../../useYearFromDate";
 import {
@@ -15,9 +16,10 @@ import {
   Data,
 } from "./styled";
 
-const MovieCard = ({ imageURL, title, subtitle, tags, rating, voteCount }) => {
+const MovieCard = ({ imageURL, title, subtitle, tags, rating, voteCount, id }) => {
+  const navigate = useNavigate();
   return (
-    <CardContainer>
+    <CardContainer onClick={() => {navigate(`/movies/${id}`)}}>
       <Image src={imageURL} />
       <Data>
         <Info>

@@ -58,6 +58,7 @@ const SearchResults = () => {
                             tags={movieTags}
                             rating={rating}
                             voteCount={movie.vote_count}
+                            id={movie.id}
                         />
                     );
                 })}
