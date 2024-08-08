@@ -19,6 +19,29 @@ const PeoplePage = () => {
 
   const baseImageURL = "https://image.tmdb.org/t/p/h632";
   const baseImageURLmovie = "https://image.tmdb.org/t/p/w500";
+  const defaultImageURL = "../../Resources/no poster.png";
+
+  const genreTags = [
+    { name: "Action", id: 28 },
+    { name: "Adventure", id: 12 },
+    { name: "Animation", id: 16 },
+    { name: "Comedy", id: 35 },
+    { name: "Crime", id: 80 },
+    { name: "Documentary", id: 99 },
+    { name: "Drama", id: 18 },
+    { name: "Family", id: 10751 },
+    { name: "Fantasy", id: 14 },
+    { name: "History", id: 36 },
+    { name: "Horror", id: 27 },
+    { name: "Music", id: 10402 },
+    { name: "Mystery", id: 9648 },
+    { name: "Romance", id: 10749 },
+    { name: "Sci-Fi", id: 878 },
+    { name: "TV Movie", id: 10770 },
+    { name: "Thriller", id: 53 },
+    { name: "War", id: 10752 },
+    { name: "Western", id: 37 },
+  ];
 
   return (
     <Container>
@@ -33,13 +56,22 @@ const PeoplePage = () => {
         <ListHeadline>Movies - Cast</ListHeadline>
         <List>
           {cast.map((movie) => {
+            let tags = movie.genre_ids.map((id) => {
+              const genre = genreTags.find((tag) => tag.id === id);
+              return genre ? genre.name : null;
+            });
+            let rating = 0;
+            if (movie.vote_average) {
+              rating = movie.vote_average.toFixed(1);
+            }
+
             return (
               <MovieCard
                 imageURL={baseImageURLmovie + movie.poster_path}
                 title={movie.title}
                 subtitle={movie.release_date}
-                tags={movie.genre_ids}
-                rating={movie.vote_average}
+                tags={tags}
+                rating={rating}
                 voteCount={movie.vote_count}
               />
             );
@@ -49,13 +81,22 @@ const PeoplePage = () => {
           <ListHeadline>Movies - Crew</ListHeadline>
           <List>
             {crew.map((movie) => {
+              let tags = movie.genre_ids.map((id) => {
+                const genre = genreTags.find((tag) => tag.id === id);
+                return genre ? genre.name : null;
+              });
+              let rating = 0;
+              if (movie.vote_average) {
+                rating = movie.vote_average.toFixed(1);
+              }
+
               return (
                 <MovieCard
                   imageURL={baseImageURLmovie + movie.poster_path}
                   title={movie.title}
                   subtitle={movie.release_date}
-                  tags={movie.genre_ids}
-                  rating={movie.vote_average}
+                  tags={tags}
+                  rating={rating}
                   voteCount={movie.vote_count}
                 />
               );
