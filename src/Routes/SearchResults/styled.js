@@ -7,4 +7,5 @@ export const Main = styled.div`
 
 export const Results = styled.div`
     display: flex;
-`
+    flex-wrap: wrap;
+`;

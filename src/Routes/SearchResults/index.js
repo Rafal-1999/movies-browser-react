@@ -4,12 +4,13 @@ import { selectMovies } from "../../moviesSlice";
 import { useSearchData } from "../../useSearchData";
 import { Main, Results } from "./styled"
 import { useLocation } from "react-router-dom";
+import { NoResults } from "../../features/NoResults";
 
 const SearchResults = () => {
 
     const params = useLocation();
     const query = new URLSearchParams(params.search).get("query");
-    
+
     useSearchData(query);
     const searchResults = useSelector(selectMovies);
 
@@ -39,30 +40,34 @@ const SearchResults = () => {
 
     return (
         <Main>
-            <p>Search results for "{query}"</p>
-            <Results>
-                {searchResults.map((movie) => {
-                    let movieTags = [];
-                    movie.genre_ids.forEach((id) => {
-                        movieTags.push(genreTags.find((tag) => id === tag.id).name);
-                    });
+            {searchResults.length === 0 ?
+                <NoResults query={query} /> : <>
+                    <p>Search results for "{query}"</p>
+                    <Results>
+                        {searchResults.map((movie) => {
+                            let movieTags = [];
+                            movie.genre_ids.forEach((id) => {
+                                movieTags.push(genreTags.find((tag) => id === tag.id).name);
+                            });
 
-                    let rating = 0;
-                    rating = movie.vote_average.toFixed(1);
+                            let rating = 0;
+                            rating = movie.vote_average.toFixed(1);
 
-                    return (
-                        <MovieCard
-                            imageURL={baseImageURL + movie.poster_path}
-                            title={movie.title}
-                            subtitle={movie.release_date}
-                            tags={movieTags}
-                            rating={rating}
-                            voteCount={movie.vote_count}
-                            id={movie.id}
-                        />
-                    );
-                })}
-            </Results>
+                            return (
+                                <MovieCard
+                                    key={movie.title}
+                                    imageURL={baseImageURL + movie.poster_path}
+                                    title={movie.title}
+                                    subtitle={movie.release_date}
+                                    tags={movieTags}
+                                    rating={rating}
+                                    voteCount={movie.vote_count}
+                                    id={movie.id}
+                                />
+                            );
+                        })}
+                    </Results>
+                </>}
         </Main>
     )
 }
