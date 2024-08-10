@@ -5,7 +5,7 @@ import { setPeople } from "./peopleSlice";
 
 const apiKey = "4b61c5d2cbb79009328876101afea488";
 
-export const useSearchData = (query) => {
+export const useSearchPeopleData = (query) => {
   const dispatch = useDispatch();
   useEffect(() => {
     const getSearchPersonData = async () => {
