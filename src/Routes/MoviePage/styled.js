@@ -17,6 +17,10 @@ export const Cast = styled.div`
 export const CastHeader = styled.p`
     font-weight: 600;
     font-size: 36px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        font-size: 20px;
+    }
 `
 
 export const CastList = styled.div`
@@ -31,6 +35,10 @@ export const Crew = styled.div`
 export const CrewHeader = styled.p`
     font-weight: 600;
     font-size: 36px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        font-size: 20px;
+    }
 `
 
 export const CrewList = styled.div`

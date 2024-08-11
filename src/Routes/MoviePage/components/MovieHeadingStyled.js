@@ -29,6 +29,10 @@ export const Title = styled.p`
     font-weight: 600;
     font-size: 64px;
     margin: 0px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        font-size: 24px;
+    }
 `
 
 export const Rating = styled.div`
