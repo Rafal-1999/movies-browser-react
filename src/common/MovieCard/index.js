@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useAddComma } from "../../useAddComma";
+import { useCommaToRating } from "../../useCommaToRating";
 import { useYearFromDate } from "../../useYearFromDate";
 import {
   CardContainer,
@@ -36,7 +36,7 @@ const MovieCard = ({ imageURL, title, subtitle, tags, rating, voteCount, id }) =
         </Info>
         <Rating>
           <StyledStarIcon />
-          <StarRating>{useAddComma(rating)}</StarRating>
+          <StarRating>{useCommaToRating(rating)}</StarRating>
           <VoteCount>{voteCount} votes</VoteCount>
         </Rating>
       </Data>
