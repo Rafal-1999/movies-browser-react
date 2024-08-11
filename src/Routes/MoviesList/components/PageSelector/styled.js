@@ -12,6 +12,10 @@ export const PageButtonLeft = styled(PageButton)`
     background-color: ${({ theme }) => theme.color.mystic};
     transition: all 0.3s linear;
     border: none;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    padding: 8px 8px 8px 16px;
     cursor: pointer;
     &:hover,
     &:focus {
@@ -34,11 +38,14 @@ export const Bold = styled.strong`
 export const PageButtonNext = styled.button`
     border: none;
     margin: 6px;
-    padding: 8px;
+    padding: 8px 16px 8px 8px;
     cursor: pointer;
     transition: all 0.3s linear;
     background-color: ${({ theme }) => theme.color.pattensBlue};
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    height: 36px;
     &:focus, 
     &:hover {
         background-color: #baccef;
