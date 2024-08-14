@@ -1,17 +1,19 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import NavigationBar from "../common/Navigation";
-import MoviesList from "./MoviesList";
-import SearchResults from "./SearchResults";
+import MoviesList from "./MovieList";
+import SearchResults from "./MovieSearch";
 import MoviePage from "./MoviePage";
 import { Error } from "../features/Error";
 import { NoResults } from "../features/NoResults";
 import MovieCardFull from "../common/MovieCardFull";
 import PeoplePage from "./PeoplePage";
 import PeopleList from "./PeopleList";
+import PeopleSearch from "./PeopleSearch";
 
 export const toPopularPeople = () => "/people";
 export const toPopularMovies = () => "/movies";
 export const toSearchMovies = () => "/search";
+export const toPeopleSearch = () => "/peoplesearch";
 export const Router = () => {
 
     return (
@@ -24,6 +26,7 @@ export const Router = () => {
                 <Route path="/movies/:id" element={<MoviePage/>} />
                 <Route path="/people/:id" element={<PeoplePage />} />
                 <Route path={toPopularPeople()} element={<PeopleList />} />
+                <Route path={toPeopleSearch()} element={<PeopleSearch />} />
                 <Route path="/" element={"Strona główna"} />
                 <Route path="*" element={<Error />} />
                 <Route path="/noResults" element={<NoResults />} />
