@@ -20,7 +20,7 @@ export const ListHeadline = styled.h1`
 
 export const List = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, max-content));
   grid-gap: 24px;
   margin-top: 24px;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {

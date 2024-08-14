@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import PageSelector from "./components/PageSelector/PageSelector";
 
 export const StyledSection = styled.section`
   margin-top: 56px;
@@ -9,7 +8,7 @@ export const StyledSection = styled.section`
 
 export const MainArticle = styled.article`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, max-content));
   grid-gap: 24px;
   margin-top: 24px;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
