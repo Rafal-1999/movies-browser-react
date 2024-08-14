@@ -37,34 +37,36 @@ const SearchResults = () => {
 
     const baseImageURL = "https://image.tmdb.org/t/p/w500";
 
-    return (
-        <Main>
-            <p>Search results for "{query}"</p>
-            <Results>
-                {searchResults.map((movie) => {
-                    let movieTags = [];
-                    movie.genre_ids.forEach((id) => {
-                        movieTags.push(genreTags.find((tag) => id === tag.id).name);
-                    });
-
-                    let rating = 0;
-                    rating = movie.vote_average.toFixed(1);
-
-                    return (
-                        <MovieCard
-                            imageURL={baseImageURL + movie.poster_path}
-                            title={movie.title}
-                            subtitle={movie.release_date}
-                            tags={movieTags}
-                            rating={rating}
-                            voteCount={movie.vote_count}
-                            id={movie.id}
-                        />
-                    );
-                })}
-            </Results>
-        </Main>
-    )
+    if (Array.isArray(searchResults)) {
+        return (
+            <Main>
+                <p>Search results for "{query}"</p>
+                <Results>
+                    {searchResults.map((movie) => {
+                        let movieTags = [];
+                        movie.genre_ids.forEach((id) => {
+                            movieTags.push(genreTags.find((tag) => id === tag.id).name);
+                        });
+    
+                        let rating = 0;
+                        rating = movie.vote_average.toFixed(1);
+    
+                        return (
+                            <MovieCard
+                                imageURL={baseImageURL + movie.poster_path}
+                                title={movie.title}
+                                subtitle={movie.release_date}
+                                tags={movieTags}
+                                rating={rating}
+                                voteCount={movie.vote_count}
+                                id={movie.id}
+                            />
+                        );
+                    })}
+                </Results>
+            </Main>
+        )
+    }
 }
 
 export default SearchResults;
