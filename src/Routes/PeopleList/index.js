@@ -18,6 +18,7 @@ function PeopleList() {
               <PersonCardToPeoplePage
                 image={"https://image.tmdb.org/t/p/h632" + person.profile_path}
                 title={person.name}
+                id={person.id}
               />
             );
           })}
