@@ -19,7 +19,6 @@ const PeoplePage = () => {
 
   const baseImageURL = "https://image.tmdb.org/t/p/h632";
   const baseImageURLmovie = "https://image.tmdb.org/t/p/w500";
-  const defaultImageURL = "../../Resources/no poster.png";
 
   const genreTags = [
     { name: "Action", id: 28 },

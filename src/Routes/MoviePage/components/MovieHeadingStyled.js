@@ -1,58 +1,107 @@
-import styled from "styled-components"
+import styled from "styled-components";
+import { ReactComponent as StarIcon } from "../../../Resources/shape-star.svg";
 
 export const Container = styled.div`
-    background-color: black; 
-    width: 100%;
-    aspect-ratio: 192/77;
-    display: flex;
-    justify-content: center;
-    background: linear-gradient(189.44deg, rgba(0, 0, 0, 0) 58.48%, rgba(0, 0, 0, 0.106473) 63.17%, rgba(0, 0, 0, 0.235359) 68.85%, rgba(0, 0, 0, 0.492821) 78.08%, rgba(0, 0, 0, 0.740286) 85.86%, #000000 92.87%),
-linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.689555) 4.66%, rgba(0, 0, 0, 0.439033) 9.34%, rgba(0, 0, 0, 0.20628) 15.16%, rgba(0, 0, 0, 0) 24.22%),
-linear-gradient(90deg, #000000 13.6%, rgba(0, 0, 0, 0.984059) 14.58%, rgba(0, 0, 0, 0.967732) 15.44%, rgba(0, 0, 0, 0.865569) 16.3%, rgba(0, 0, 0, 0.230315) 22.87%, rgba(0, 0, 0, 0) 26.64%),
-linear-gradient(270deg, #000000 14.11%, rgba(0, 0, 0, 0.873268) 15.08%, rgba(0, 0, 0, 0.720529) 16.51%, rgba(0, 0, 0, 0.294577) 19.99%, rgba(0, 0, 0, 0.159921) 21.88%, rgba(0, 0, 0, 0) 25.68%);
-`
+  background-color: black;
+  width: 100%;
+  aspect-ratio: 192/77;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(
+      189.44deg,
+      rgba(0, 0, 0, 0) 58.48%,
+      rgba(0, 0, 0, 0.106473) 63.17%,
+      rgba(0, 0, 0, 0.235359) 68.85%,
+      rgba(0, 0, 0, 0.492821) 78.08%,
+      rgba(0, 0, 0, 0.740286) 85.86%,
+      #000000 92.87%
+    ),
+    linear-gradient(
+      180deg,
+      #000000 0%,
+      rgba(0, 0, 0, 0.689555) 4.66%,
+      rgba(0, 0, 0, 0.439033) 9.34%,
+      rgba(0, 0, 0, 0.20628) 15.16%,
+      rgba(0, 0, 0, 0) 24.22%
+    ),
+    linear-gradient(
+      90deg,
+      #000000 13.6%,
+      rgba(0, 0, 0, 0.984059) 14.58%,
+      rgba(0, 0, 0, 0.967732) 15.44%,
+      rgba(0, 0, 0, 0.865569) 16.3%,
+      rgba(0, 0, 0, 0.230315) 22.87%,
+      rgba(0, 0, 0, 0) 26.64%
+    ),
+    linear-gradient(
+      270deg,
+      #000000 14.11%,
+      rgba(0, 0, 0, 0.873268) 15.08%,
+      rgba(0, 0, 0, 0.720529) 16.51%,
+      rgba(0, 0, 0, 0.294577) 19.99%,
+      rgba(0, 0, 0, 0.159921) 21.88%,
+      rgba(0, 0, 0, 0) 25.68%
+    );
+`;
 
 export const Banner = styled.img`
-    height: 100%;
-    z-index: -1;
-`
+  height: 100%;
+  z-index: -1;
+`;
 
 export const Details = styled.div`
-    align-self: flex-end;
-    justify-self: left;
-    position: absolute;
-    color: white;
-    margin-right: 50%;
-`
+  align-self: flex-end;
+  justify-self: left;
+  position: absolute;
+  color: white;
+  margin-right: 50%;
+  margin-left: 276px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    margin-left: 16px;
+  }
+`;
 
 export const Title = styled.p`
-    font-weight: 600;
-    font-size: 64px;
-    margin: 0px;
+  font-weight: 600;
+  font-size: 64px;
+  margin: 0px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    font-size: 24px;
+  }
+`;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-        font-size: 24px;
-    }
-`
 
 export const Rating = styled.div`
-    font-size: 30px;
-    font-weight: 500;
-`
+  font-size: 30px;
+  font-weight: 500;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    font-weight: 600px;
+    font-size: 14px;
+  }
+`;
 
 export const OutOf = styled.span`
-    font-weight: 400;
-    font-size: 16px;
-`
-
-export const Stats = styled.div`
-    margin-left: 8px;
-`
+  font-weight: 400;
+  font-size: 16px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    font-size: 10px;
+  }
+`;
 
 export const Votes = styled.div`
-    margin-bottom: 56px;
-`
+  margin-bottom: 56px;
+  font-weight: 400px;
+  font-size: 16px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+`;
 
-export const StarIcon = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.1451 8.54101L16.0641 7.51201L12.9011 1.10001C12.8092 0.943866 12.6781 0.814432 12.5207 0.724507C12.3634 0.634582 12.1853 0.58728 12.0041 0.58728C11.8229 0.58728 11.6449 0.634582 11.4875 0.724507C11.3302 0.814432 11.1991 0.943866 11.1071 1.10001L7.93814 7.51201L0.857139 8.54101C0.672479 8.56766 0.498959 8.64545 0.356195 8.76556C0.213431 8.88568 0.107117 9.04334 0.0492738 9.22072C-0.00856983 9.3981 -0.0156366 9.58813 0.0288724 9.76931C0.0733813 9.9505 0.167691 10.1156 0.301139 10.246L5.42614 15.24L4.21714 22.293C4.18563 22.4769 4.2062 22.666 4.27652 22.8388C4.34684 23.0116 4.46411 23.1613 4.61507 23.271C4.76603 23.3806 4.94465 23.4459 5.13075 23.4593C5.31685 23.4727 5.50299 23.4338 5.66814 23.347L12.0011 20.018L18.3341 23.347C18.4993 23.4338 18.6854 23.4727 18.8715 23.4593C19.0576 23.4459 19.2362 23.3806 19.3872 23.271C19.5382 23.1613 19.6554 23.0116 19.7258 22.8388C19.7961 22.666 19.8166 22.4769 19.7851 22.293L18.5761 15.24L23.7011 10.246C23.8345 10.1158 23.9289 9.95079 23.9735 9.76975C24.0181 9.58871 24.0112 9.39881 23.9536 9.22148C23.896 9.04415 23.7899 8.88646 23.6474 8.76622C23.5049 8.64598 23.3316 8.56797 23.1471 8.54101H23.1451Z" fill="#FCD420" /></svg>
-);
+
+export const StyledStarIcon = styled(StarIcon)`
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    width: 16px;
+    height: 16px;
+  }
+`;
