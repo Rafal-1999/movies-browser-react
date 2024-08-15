@@ -6,6 +6,7 @@ import {
   Birth,
   Label,
   Description,
+  DescriptionMobile,
 } from "./styled";
 
 const PersonCardFull = ({
@@ -21,15 +22,16 @@ const PersonCardFull = ({
       <Info>
         <Title>{title}</Title>
         <Birth>
-          <Label>Date of birth:</Label>
+          <Label>Date of birth: </Label>
           {birthDate}
         </Birth>
         <Birth>
-          <Label>Place of birth:</Label>
+          <Label>Place of birth: </Label>
           {birthPlace}
         </Birth>
         <Description>{description}</Description>
       </Info>
+      <DescriptionMobile>{description}</DescriptionMobile>
     </Container>
   );
 };

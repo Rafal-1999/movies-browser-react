@@ -23,11 +23,13 @@ export const Card = styled.div`
   box-shadow: ${({ theme }) => theme.boxShadow};
   border-radius: 5px;
   padding: 8px;
-  min-width: 208px;
-  min-height: 339px;
+  width: 208px;
+  height: 339px;
   transition: all 0.2s linear;
 
-  @media (min-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    width: 136px;
+    height: 245px;
     padding: 16px 16px;
   }
 
