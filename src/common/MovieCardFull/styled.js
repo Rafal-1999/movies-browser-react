@@ -12,6 +12,7 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.img`
+border-radius: 5px;
   height: 464px;
   width: 312px;
   margin: 40px;
@@ -31,6 +32,7 @@ export const Info = styled.div`
 `;
 
 export const Title = styled.p`
+color: ${({ theme }) => theme.color.woodsmoke};
   font-weight: 600;
   font-size: 36px;
   margin: 0px;
@@ -79,6 +81,7 @@ export const Label = styled.span`
 export const TagList = styled.div`
   margin-top: 24px;
   display: flex;
+  flex-wrap: wrap;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     margin-top: 0px;
   }

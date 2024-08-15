@@ -18,6 +18,7 @@ import {
   DescriptionMobile,
   StyledStarIcon,
 } from "./styled";
+import { useCommaToRating } from "../../useCommaToRating";
 
 const MovieCardFull = ({
   description,
@@ -53,7 +54,7 @@ const MovieCardFull = ({
         <Rating>
           <StyledStarIcon />
           <StarRating>
-            {rating}
+            {useCommaToRating(rating)}
             <OutOf> /10</OutOf>
           </StarRating>
           <VoteCount>{voteCount} votes</VoteCount>

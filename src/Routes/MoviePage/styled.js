@@ -28,6 +28,7 @@ export const CastHeader = styled.p`
   }
 `;
 
+
 export const CastList = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(184px, max-content));

@@ -70,6 +70,7 @@ export const Title = styled.p`
   }
 `;
 
+
 export const Rating = styled.div`
   font-size: 30px;
   font-weight: 500;
@@ -96,6 +97,7 @@ export const Votes = styled.div`
     margin-bottom: 10px;
   }
 `;
+
 
 export const StyledStarIcon = styled(StarIcon)`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
