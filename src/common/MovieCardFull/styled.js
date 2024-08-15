@@ -5,6 +5,10 @@ export const Container = styled.div`
   width: 100%;
   box-shadow: ${({ theme }) => theme.boxShadow};
   display: flex;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    display: grid;
+    grid-template-columns: 269px 1fr;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: grid;
     grid-template-columns: 130px 1fr;
@@ -12,10 +16,15 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.img`
-border-radius: 5px;
+  border-radius: 5px;
   height: 464px;
   width: 312px;
   margin: 40px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    height: 316px;
+    width: 213px;
+    margin: 28px;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     height: 169px;
     width: 114px;
@@ -32,7 +41,7 @@ export const Info = styled.div`
 `;
 
 export const Title = styled.p`
-color: ${({ theme }) => theme.color.woodsmoke};
+  color: ${({ theme }) => theme.color.woodsmoke};
   font-weight: 600;
   font-size: 36px;
   margin: 0px;
@@ -140,6 +149,9 @@ export const VoteCount = styled.span`
 export const Description = styled.div`
   margin-top: 24px;
   font-size: 20px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    display: none;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: none;
   }
@@ -153,6 +165,14 @@ export const DescriptionMobile = styled.div`
     margin-top: 0;
     font-weight: 400;
     font-size: 14px;
+    display: grid;
+    grid-column: 1 / -1;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    display: initial;
+    margin: 20px;
+    font-weight: 400;
+    font-size: 16px;
     display: grid;
     grid-column: 1 / -1;
   }

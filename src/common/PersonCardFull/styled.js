@@ -5,6 +5,10 @@ export const Container = styled.div`
   box-shadow: ${({ theme }) => theme.boxShadow};
   background-color: ${({ theme }) => theme.color.white};
   display: flex;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    display: grid;
+    grid-template-columns: 313px 1fr;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: grid;
     grid-template-columns: 132px 1fr;
@@ -15,6 +19,11 @@ export const Image = styled.img`
   height: 564px;
   width: 399px;
   margin: 40px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    height: 363px;
+    width: 257px;
+    margin: 28px;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     height: 163px;
     width: 116px;
@@ -53,6 +62,9 @@ export const Description = styled.div`
   margin-top: 24px;
   font-weight: 400;
   font-size: 20px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    display: none;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: none;
   }
@@ -60,6 +72,14 @@ export const Description = styled.div`
 
 export const DescriptionMobile = styled.div`
   display: none;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    display: initial;
+    margin: 20px;
+    font-weight: 400;
+    font-size: 16px;
+    display: grid;
+    grid-column: 1 / -1;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: initial;
     margin: 16px;
