@@ -56,6 +56,9 @@ export const Details = styled.div`
   color: white;
   margin-right: 50%;
   margin-left: 276px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    margin-left: 146px;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     margin-left: 16px;
   }
@@ -65,15 +68,21 @@ export const Title = styled.p`
   font-weight: 600;
   font-size: 64px;
   margin: 0px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    font-size: 44px;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 24px;
   }
 `;
 
-
 export const Rating = styled.div`
   font-size: 30px;
   font-weight: 500;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    font-weight: 600px;
+    font-size: 22px;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-weight: 600px;
     font-size: 14px;
@@ -83,6 +92,9 @@ export const Rating = styled.div`
 export const OutOf = styled.span`
   font-weight: 400;
   font-size: 16px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    font-size: 13px;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 10px;
   }
@@ -92,12 +104,15 @@ export const Votes = styled.div`
   margin-bottom: 56px;
   font-weight: 400px;
   font-size: 16px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    font-size: 13px;
+    margin-bottom: 33px;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 10px;
     margin-bottom: 10px;
   }
 `;
-
 
 export const StyledStarIcon = styled(StarIcon)`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
