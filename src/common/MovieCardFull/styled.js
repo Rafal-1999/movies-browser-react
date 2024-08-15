@@ -1,12 +1,13 @@
 import styled from "styled-components";
+import { ReactComponent as StarIcon } from "../../Resources/shape-star.svg";
 
 export const Container = styled.div`
   width: 100%;
-  box-shadow: 0px 4px 12px 0px #bac7d580;
+  box-shadow: ${({ theme }) => theme.boxShadow};
   display: flex;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 130px 1fr;
   }
 `;
 
@@ -45,6 +46,8 @@ export const Subtitle = styled.p`
   font-weight: 400;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 13px;
+    margin-top: 4px;
+    margin-bottom: 8px;
   }
 `;
 export const DetailBox = styled.div``;
@@ -67,7 +70,7 @@ export const Release = styled.p`
 `;
 
 export const Label = styled.span`
-  color: #74788b;
+  color: ${({ theme }) => theme.color.stormGray};
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: none;
   }
@@ -76,13 +79,15 @@ export const Label = styled.span`
 export const TagList = styled.div`
   margin-top: 24px;
   display: flex;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    margin-top: 0px;
+  }
 `;
 
 export const Tag = styled.div`
-  font-family: Poppins;
   font-weight: 400;
   font-size: 14px;
-  background-color: #e4e6f0;
+  background: ${({ theme }) => theme.color.mystic};
   padding: 8px 16px;
   margin-right: 8px;
   border-radius: 5px;
@@ -96,6 +101,9 @@ export const Rating = styled.div`
   display: flex;
   margin-top: 24px;
   align-items: baseline;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    margin-top: 8px;
+  }
 `;
 
 export const StarRating = styled.span`
@@ -139,6 +147,7 @@ export const DescriptionMobile = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: initial;
     margin: 16px;
+    margin-top: 0;
     font-weight: 400;
     font-size: 14px;
     display: grid;
@@ -146,7 +155,12 @@ export const DescriptionMobile = styled.div`
   }
 `;
 
-export const Star = styled.svg`
-  align-self: center;
-  margin-right: 8px;
+export const StyledStarIcon = styled(StarIcon)`
+  width: 24px;
+  height: 24px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
 `;

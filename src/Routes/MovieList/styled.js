@@ -12,8 +12,8 @@ export const MainArticle = styled.article`
   grid-gap: 24px;
   margin-top: 24px;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(272px, max-content));
+    justify-content: center;
   }
 `;
 

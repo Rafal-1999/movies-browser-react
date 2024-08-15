@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 132px 1fr;
   }
 `;
 
