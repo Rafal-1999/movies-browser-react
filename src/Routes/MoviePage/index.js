@@ -1,7 +1,7 @@
 import { MovieInfo, Cast, Crew, CastHeader, CrewHeader, CastList, CrewList } from "./styled";
 import MovieCardFull from "../../common/MovieCardFull"
 import MovieHeading from "./components/MovieHeading.js"
-import { UNSAFE_useScrollRestoration, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDataById } from "../../useDataById";
 import { useSelector } from "react-redux";
 import { selectMovies, selectCast, selectCrew, selectState } from "../../moviesSlice";
