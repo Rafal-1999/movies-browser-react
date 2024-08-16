@@ -4,7 +4,7 @@ import MovieCard from "../../common/MovieCard";
 import { useMoviesData } from "../../useMoviesData";
 import { Headline, MainArticle, StyledSection } from "./styled";
 import { useLocation } from "react-router-dom";
-import PageSelector from "./components/PageSelector/PageSelector";
+import PageSelector from "../../common/PageSelector/index.js";
 
 function MoviesList() {
   const params = useLocation();

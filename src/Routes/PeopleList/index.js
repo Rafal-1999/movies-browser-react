@@ -3,9 +3,14 @@ import { selectPeople } from "../../peopleSlice";
 import PersonCardToPeoplePage from "../../common/PersonCardToPeoplePage";
 import { usePeopleData } from "../../usePeopleData";
 import { Headline, MainArticle, StyledSection } from "./styled";
+import PageSelector from "../../common/PageSelector";
+import { useLocation } from "react-router-dom";
 
 function PeopleList() {
-  usePeopleData();
+  const params = useLocation();
+  const page = new URLSearchParams(params.search).get("page") || 1;
+
+  usePeopleData(page);
   const people = useSelector(selectPeople);
 
   if (Array.isArray(people)) {
@@ -23,6 +28,7 @@ function PeopleList() {
             );
           })}
         </MainArticle>
+        <PageSelector page={page} maxPages={500} />
       </StyledSection>
     );
   }
