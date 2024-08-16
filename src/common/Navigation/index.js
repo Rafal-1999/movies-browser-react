@@ -16,7 +16,7 @@ const Navigation = () => {
   const path = useLocation();
 
   let content = "movies";
-  if (path.pathname.includes("movies")) {
+  if (path.pathname.includes("movies") || path.pathname.includes("search")) {
     content = "movies";
   } else {
     content = "people";
@@ -29,14 +29,6 @@ const Navigation = () => {
   let timeout = 0;
   const searchbarHandler = () => {
     setParams(`query=${searchRef.current.value}`);
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      if (path.pathname.includes("people")) {
-        navigate(`/peoplesearch?query=${searchRef.current.value}`);
-      } else {
-        navigate(`/search?query=${searchRef.current.value}`);
-      }
-    }, 3000);
   };
 
   return (
@@ -56,6 +48,15 @@ const Navigation = () => {
           ref={searchRef}
           onChange={() => {
             searchbarHandler();
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              if (path.pathname.includes("people")) {
+                navigate(`/peoplesearch?query=${searchRef.current.value}`);
+              } else {
+                navigate(`/search?query=${searchRef.current.value}`);
+              }
+            }
           }}
         />
       </Box>

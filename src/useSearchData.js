@@ -18,5 +18,5 @@ export const useSearchData = (query) => {
             }
         };
         getSearchData();
-    }, []);
+    }, [query]);
 };
