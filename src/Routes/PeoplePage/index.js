@@ -76,6 +76,7 @@ const PeoplePage = () => {
                 tags={tags}
                 rating={rating}
                 voteCount={movie.vote_count}
+                id={movie.id}
               />
             );
           })}

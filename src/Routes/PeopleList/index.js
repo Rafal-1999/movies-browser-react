@@ -4,9 +4,14 @@ import PersonCardToPeoplePage from "../../common/PersonCardToPeoplePage";
 import { usePeopleData } from "../../usePeopleData";
 import { Headline, MainArticle, StyledSection } from "./styled";
 import { Loading } from "../../common/SearchResultsLoading";
+import PageSelector from "../../common/PageSelector";
+import { useLocation } from "react-router-dom";
 
 function PeopleList() {
-  usePeopleData();
+  const params = useLocation();
+  const page = new URLSearchParams(params.search).get("page") || 1;
+
+  usePeopleData(page);
   const people = useSelector(selectPeople);
   const state = useSelector(selectPeopleState);
 
@@ -27,6 +32,7 @@ function PeopleList() {
             );
           })}
         </MainArticle>
+        <PageSelector page={page} maxPages={500} />
       </StyledSection>
     );
   }

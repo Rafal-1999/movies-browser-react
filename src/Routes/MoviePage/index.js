@@ -54,7 +54,7 @@ const MoviePage = () => {
                 <CastHeader>Cast</CastHeader>
                 <CastList>
                     {cast.map(actor => {
-                        return (<PersonCard image={baseImageURL + actor.profile_path} title={actor.name} role={actor.character} />)
+                        return (<PersonCard id={actor.id} image={baseImageURL + actor.profile_path} title={actor.name} role={actor.character} />)
                     })}
                 </CastList>
             </Cast>
@@ -62,7 +62,7 @@ const MoviePage = () => {
                 <CrewHeader>Crew</CrewHeader>
                 <CrewList>
                     {crew.map(member => {
-                        return (<PersonCard image={baseImageURL + member.profile_path} title={member.name} role={member.known_for_department} />)
+                        return (<PersonCard id={member.id} image={baseImageURL + member.profile_path} title={member.name} role={member.known_for_department} />)
                     })}
                 </CrewList>
             </Crew>
