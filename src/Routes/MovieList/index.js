@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
-import { selectMaxPages, selectMovies } from "../../moviesSlice";
+import { selectMaxPages, selectMovies, selectState } from "../../moviesSlice";
 import MovieCard from "../../common/MovieCard";
 import { useMoviesData } from "../../useMoviesData";
 import { Headline, MainArticle, StyledSection } from "./styled";
 import { useLocation } from "react-router-dom";
-import PageSelector from "../../common/PageSelector/index.js";
+import PageSelector from "./components/PageSelector/PageSelector";
+import { Loading } from "../../common/SearchResultsLoading";
 
 function MoviesList() {
   const params = useLocation();
@@ -12,6 +13,7 @@ function MoviesList() {
 
   useMoviesData(page);
   const movies = useSelector(selectMovies);
+  const state = useSelector(selectState);
 
   const genreTags = [
     { name: "Action", id: 28 },
@@ -34,8 +36,9 @@ function MoviesList() {
     { name: "War", id: 10752 },
     { name: "Western", id: 37 },
   ];
-
-  if (Array.isArray(movies)) {
+  if (state === "loading") {
+    return <Loading/>
+  } else if (Array.isArray(movies)) {
     return (
       <StyledSection>
         <Headline>Popular movies</Headline>

@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
-import { selectPeople } from "../../peopleSlice";
+import { selectPeople, selectPeopleState } from "../../peopleSlice";
 import PersonCardToPeoplePage from "../../common/PersonCardToPeoplePage";
 import { useSearchPeopleData } from "../../useSearchPeopleData";
 import { Headline, MainArticle, StyledSection } from "./styled";
 import { useLocation } from "react-router-dom";
+import { Loading } from "../../common/SearchResultsLoading";
 
 function PeopleList() {
 
@@ -12,8 +13,11 @@ function PeopleList() {
 
     useSearchPeopleData(query);
     const people = useSelector(selectPeople);
+    const state = useSelector(selectPeopleState);
 
-    if (Array.isArray(people)) {
+    if (state === "loading") {
+        return <Loading />
+    } else if (Array.isArray(people)) {
         return (
             <StyledSection>
                 <Headline> Popular people </Headline>

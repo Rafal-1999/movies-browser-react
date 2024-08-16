@@ -61,6 +61,7 @@ export const CrewList = styled.div`
   grid-gap: 24px;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(120px, max-content));
+    grid-gap: 16px;
   }
 `;

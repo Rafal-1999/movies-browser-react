@@ -30,5 +30,6 @@ export const { setMovies } = moviesSlice.actions;
 export const selectMovies = state => state.movies.movies;
 export const selectCast = state => state.movies.cast;
 export const selectCrew = state => state.movies.crew;
+export const selectState = state => state.movies.state;
 
 export default moviesSlice.reducer

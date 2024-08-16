@@ -10,12 +10,14 @@ export const usePeopleData = (page) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   useEffect(() => {
+    dispatch(setPeople({state: "loading"}));
     const getPeopleData = async () => {
       try {
         const res = await axios.get(
           `https://api.themoviedb.org/3/person/popular?api_key=${apiKey}&page=${page || 1}`
         );
         dispatch(setPeople(res.data));
+        dispatch(setPeople({state: "data"}));
       } catch {
         dispatch(setPeople({ state: "error" }));
         navigate("/error");

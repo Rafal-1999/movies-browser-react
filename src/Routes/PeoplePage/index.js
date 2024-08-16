@@ -3,9 +3,10 @@ import PersonCardFull from "../../common/PersonCardFull";
 import { useParams } from "react-router-dom";
 import { usePeopleDataById } from "../../usePeopleDataById";
 import { useSelector } from "react-redux";
-import { selectPeople, selectCast, selectCrew } from "../../peopleSlice";
+import { selectPeople, selectCast, selectCrew, selectPeopleState } from "../../peopleSlice";
 import { usePeopleCast } from "../../usePeopleCast";
 import MovieCard from "../../common/MovieCard";
+import { Loading } from "../../common/SearchResultsLoading";
 
 const PeoplePage = () => {
   const params = useParams();
@@ -16,6 +17,7 @@ const PeoplePage = () => {
   const person = useSelector(selectPeople);
   const cast = useSelector(selectCast);
   const crew = useSelector(selectCrew);
+  const state = useSelector(selectPeopleState);
 
   const baseImageURL = "https://image.tmdb.org/t/p/h632";
   const baseImageURLmovie = "https://image.tmdb.org/t/p/w500";
@@ -42,7 +44,9 @@ const PeoplePage = () => {
     { name: "Western", id: 37 },
   ];
 
-  return (
+  if (state === "loading") {
+    return <Loading/>
+  } else return (
     <Container>
       <PersonCardFull
         description={person.biography}

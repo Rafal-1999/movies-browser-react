@@ -10,6 +10,7 @@ export const usePeopleCast = (id) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   useEffect(() => {
+    dispatch(setPeople({state: "loading"}));
     const getPeopleCast = async () => {
       try {
         const res = await axios.get(
@@ -17,6 +18,7 @@ export const usePeopleCast = (id) => {
         );
         const data = res.data;
         dispatch(setPeople({ cast: data.cast, crew: data.crew }));
+        dispatch(setPeople({state: "data"}));
       } catch {
         dispatch(setPeople({ state: "error" }));
         navigate("/error");
