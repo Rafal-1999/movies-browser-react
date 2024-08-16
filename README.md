@@ -10,6 +10,8 @@ Movies Browser is the App offers access to 500 pages of popular movies and peopl
 
 ## Shorts
 
+[![AnimationMBR.gif](https://i.imgur.com/7R1azCN.gif)]
+
 ## Technologies
 
 - HTML5: Leveraging the latest HTML standards for structure and semantics.
