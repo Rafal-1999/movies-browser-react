@@ -8,12 +8,14 @@ const apiKey = "4b61c5d2cbb79009328876101afea488";
 export const useMoviesData = (page) => {
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(setMovies({state: "loading"}));
     const getMoviesData = async () => {
       try {
         const res = await axios.get(
           `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=${page || 1}`
         );
         dispatch(setMovies(res.data));
+        dispatch(setMovies({state: "data"}));
       } catch {
         dispatch(setMovies({ state: "error" }));
       }

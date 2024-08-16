@@ -30,5 +30,6 @@ export const { setPeople } = peopleSlice.actions;
 export const selectPeople = (state) => state.people.people;
 export const selectCast = (state) => state.people.cast;
 export const selectCrew = (state) => state.people.crew;
+export const selectPeopleState = (state) => state.people.state;
 
 export default peopleSlice.reducer;

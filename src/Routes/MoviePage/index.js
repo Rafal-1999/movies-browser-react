@@ -1,12 +1,13 @@
 import { MovieInfo, Cast, Crew, CastHeader, CrewHeader, CastList, CrewList } from "./styled";
 import MovieCardFull from "../../common/MovieCardFull"
 import MovieHeading from "./components/MovieHeading.js"
-import { useParams } from "react-router-dom";
+import { UNSAFE_useScrollRestoration, useParams } from "react-router-dom";
 import { useDataById } from "../../useDataById";
 import { useSelector } from "react-redux";
-import { selectMovies, selectCast, selectCrew } from "../../moviesSlice";
+import { selectMovies, selectCast, selectCrew, selectState } from "../../moviesSlice";
 import { useMovieCast } from "../../useMovieCast";
 import PersonCard from "../../common/PersonCard";
+import { Loading } from "../../common/SearchResultsLoading/index.js";
 
 const MoviePage = () => {
     const params = useParams();
@@ -17,6 +18,7 @@ const MoviePage = () => {
     const movie = useSelector(selectMovies);
     const cast = useSelector(selectCast);
     const crew = useSelector(selectCrew);
+    const state = useSelector(selectState);
 
     const baseImageURL = "https://image.tmdb.org/t/p/w500";
 
@@ -40,8 +42,9 @@ const MoviePage = () => {
             production += ` ${company.name}`;
         })
     }
-
-    return (
+    if (state === "loading") {
+        return <Loading/>
+    } else return (
         <>
             <MovieHeading background={baseImageURL + movie.backdrop_path} title={movie.title} rating={rating} voteCount={movie.vote_count}/>
             <MovieInfo>

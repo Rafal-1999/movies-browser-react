@@ -1,14 +1,18 @@
 import { useSelector } from "react-redux";
-import { selectPeople } from "../../peopleSlice";
+import { selectPeople, selectPeopleState } from "../../peopleSlice";
 import PersonCardToPeoplePage from "../../common/PersonCardToPeoplePage";
 import { usePeopleData } from "../../usePeopleData";
 import { Headline, MainArticle, StyledSection } from "./styled";
+import { Loading } from "../../common/SearchResultsLoading";
 
 function PeopleList() {
   usePeopleData();
   const people = useSelector(selectPeople);
+  const state = useSelector(selectPeopleState);
 
-  if (Array.isArray(people)) {
+  if (state === "loading") {
+    return <Loading/>
+  } else if (Array.isArray(people)) {
     return (
       <StyledSection>
         <Headline> Popular people </Headline>

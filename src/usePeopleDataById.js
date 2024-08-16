@@ -8,12 +8,14 @@ const apiKey = "4b61c5d2cbb79009328876101afea488";
 export const usePeopleDataById = (id) => {
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(setPeople({state: "loading"}));
     const getPeopleDataById = async () => {
       try {
         const res = await axios.get(
           `https://api.themoviedb.org/3/person/${id}?api_key=${apiKey}`
         );
         dispatch(setPeople({ results: res.data }));
+        dispatch(setPeople({state: "data"}));
       } catch {
         dispatch(setPeople({ state: "error" }));
       }

@@ -50,12 +50,10 @@ const Navigation = () => {
             searchbarHandler();
           }}
           onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              if (path.pathname.includes("people")) {
-                navigate(`/peoplesearch?query=${searchRef.current.value}`);
-              } else {
-                navigate(`/search?query=${searchRef.current.value}`);
-              }
+            if (path.pathname.includes("people")) {
+              navigate(`/peoplesearch?query=${searchRef.current.value}`);
+            } else {
+              navigate(`/search?query=${searchRef.current.value}`);
             }
           }}
         />
