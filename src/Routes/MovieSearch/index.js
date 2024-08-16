@@ -4,7 +4,7 @@ import { selectMovies } from "../../moviesSlice";
 import { useSearchData } from "../../useSearchData";
 import { Main, Results } from "./styled"
 import { useLocation } from "react-router-dom";
-import { NoResults } from "../../features/NoResults";
+import { NoResults } from "../NoResults";
 
 const SearchResults = () => {
 

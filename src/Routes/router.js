@@ -3,8 +3,8 @@ import NavigationBar from "../common/Navigation";
 import MoviesList from "./MovieList";
 import SearchResults from "./MovieSearch";
 import MoviePage from "./MoviePage";
-import { Error } from "../features/Error";
-import { NoResults } from "../features/NoResults";
+import { Error } from "./Error";
+import { NoResults } from "./NoResults";
 import MovieCardFull from "../common/MovieCardFull";
 import PeoplePage from "./PeoplePage";
 import PeopleList from "./PeopleList";
@@ -28,6 +28,7 @@ export const Router = () => {
                 <Route path={toPopularPeople()} element={<PeopleList />} />
                 <Route path={toPeopleSearch()} element={<PeopleSearch />} />
                 <Route path="/" element={"Strona główna"} />
+                <Route path="/error" element={<Error />} />
                 <Route path="*" element={<Error />} />
                 <Route path="/noResults" element={<NoResults />} />
             </Routes>
