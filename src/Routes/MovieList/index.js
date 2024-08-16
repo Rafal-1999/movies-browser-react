@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectMovies } from "../../moviesSlice";
+import { selectMaxPages, selectMovies } from "../../moviesSlice";
 import MovieCard from "../../common/MovieCard";
 import { useMoviesData } from "../../useMoviesData";
 import { Headline, MainArticle, StyledSection } from "./styled";

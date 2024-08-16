@@ -20,4 +20,4 @@ export const usePeopleData = (page) => {
     };
     getPeopleData();
   }, [page]);
-};
+}
