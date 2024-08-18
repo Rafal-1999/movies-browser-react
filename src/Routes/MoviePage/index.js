@@ -44,10 +44,11 @@ const MoviePage = () => {
         })
     }
 
-    let year = "";
+    let date = "";
     if (movie.release_date) {
-        year = useYearFromDate(movie.release_date);
+        date = movie.release_date;
     }
+    let year = useYearFromDate(date);
     
     if (state === "loading") {
         return <Loading/>
