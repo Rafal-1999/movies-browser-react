@@ -4,7 +4,7 @@ import MovieCard from "../../common/MovieCard";
 import { useMoviesData } from "../../useMoviesData";
 import { Headline, MainArticle, StyledSection } from "./styled";
 import { useLocation } from "react-router-dom";
-import PageSelector from "./components/PageSelector/PageSelector";
+import PageSelector from "../../common/PageSelector";
 import { Loading } from "../../common/SearchResultsLoading";
 
 function MoviesList() {
@@ -37,7 +37,7 @@ function MoviesList() {
     { name: "Western", id: 37 },
   ];
   if (state === "loading") {
-    return <Loading/>
+    return <Loading />;
   } else if (Array.isArray(movies)) {
     return (
       <StyledSection>
