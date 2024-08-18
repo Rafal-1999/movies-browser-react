@@ -68,11 +68,17 @@ export const Title = styled.p`
   font-weight: 600;
   font-size: 64px;
   margin: 0px;
+  @media (max-width: 1299px) {
+    font-size: 38px;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
-    font-size: 44px;
+    font-size: 32px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 24px;
+  }
+  @media (max-width: 399px) {
+    font-size: 18px;
   }
 `;
 
