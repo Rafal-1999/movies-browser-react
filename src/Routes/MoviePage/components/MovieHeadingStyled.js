@@ -83,15 +83,19 @@ export const Title = styled.p`
 `;
 
 export const Rating = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 4px;
   font-size: 30px;
   font-weight: 500;
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
-    font-weight: 600px;
+    font-weight: 600;
     font-size: 22px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    font-weight: 600px;
+    font-weight: 600;
     font-size: 14px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -115,8 +119,15 @@ export const Votes = styled.div`
     margin-bottom: 33px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    display: none;
+  }
+`;
+
+export const VotesMobile = styled.div`
+  display: none;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    display: initial;
     font-size: 10px;
-    margin-bottom: 10px;
   }
 `;
 
