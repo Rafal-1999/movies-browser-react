@@ -10,7 +10,7 @@ Movies Browser is the App offers access to 500 pages of popular movies and peopl
 
 ## Shorts
 
-[![Animation-MBR2.gif](https://i.postimg.cc/CM6sNvmf/Animation-MBR2.gif)](https://postimg.cc/V5ntsFyY)
+![Movies-Browser-React.gif](https://i.postimg.cc/qRLcXXQb/Movies-Browser-React.gif)
 
 ## Technologies
 
