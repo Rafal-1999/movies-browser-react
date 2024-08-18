@@ -8,6 +8,7 @@ import { selectMovies, selectCast, selectCrew, selectState } from "../../moviesS
 import { useMovieCast } from "../../useMovieCast";
 import PersonCard from "../../common/PersonCard";
 import { Loading } from "../../common/SearchResultsLoading/index.js";
+import { useYearFromDate } from "../../useYearFromDate.js";
 
 const MoviePage = () => {
     const params = useParams();
@@ -42,13 +43,16 @@ const MoviePage = () => {
             production += ` ${company.name}`;
         })
     }
+
+    const year = useYearFromDate(movie.release_date)
+    
     if (state === "loading") {
         return <Loading/>
     } else return (
         <>
             <MovieHeading background={baseImageURL + movie.backdrop_path} title={movie.title} rating={rating} voteCount={movie.vote_count}/>
             <MovieInfo>
-                <MovieCardFull description={movie.overview} imageURL={baseImageURL + movie.poster_path} title={movie.title} production={production} release={movie.release_date} tags={tags} rating={rating} voteCount={movie.vote_count} />
+                <MovieCardFull description={movie.overview} imageURL={baseImageURL + movie.poster_path} title={movie.title} production={production} release={year} tags={tags} rating={rating} voteCount={movie.vote_count} />
             </MovieInfo>
             <Cast>
                 <CastHeader>Cast</CastHeader>
