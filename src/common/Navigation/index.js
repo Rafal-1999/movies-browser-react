@@ -16,9 +16,7 @@ const Navigation = () => {
   const path = useLocation();
 
   let content = "movies";
-  if (path.pathname.includes("movies") || path.pathname.includes("search")) {
-    content = "movies";
-  } else {
+  if (path.pathname.includes("people") || path.pathname.includes("peoplesearch")) {
     content = "people";
   }
 
