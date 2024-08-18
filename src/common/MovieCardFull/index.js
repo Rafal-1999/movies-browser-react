@@ -53,6 +53,7 @@ const MovieCardFull = ({
         </TagList>
         <Rating>
           <StyledStarIcon />
+          &nbsp;
           <StarRating>
             {useCommaToRating(rating)}
             <OutOf> /10</OutOf>

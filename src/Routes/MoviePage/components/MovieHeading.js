@@ -7,6 +7,7 @@ import {
   Votes,
   Title,
   StyledStarIcon,
+  VotesMobile,
 } from "./MovieHeadingStyled";
 import { useCommaToRating } from "../../../useCommaToRating";
 
@@ -18,8 +19,9 @@ const MovieHeading = ({ background, title, rating, voteCount }) => {
         <Title>{title}</Title>
         <Rating>
           <StyledStarIcon />
-            &nbsp;{useCommaToRating(rating)}
+          &nbsp;{useCommaToRating(rating)}
           <OutOf> / 10</OutOf>
+          <VotesMobile>{voteCount} votes</VotesMobile>
         </Rating>
         <Votes>{voteCount} votes</Votes>
       </Details>
